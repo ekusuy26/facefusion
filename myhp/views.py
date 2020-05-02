@@ -17,8 +17,11 @@ def index(request):
         max_id = Document.objects.latest('id').id
         obj = Document.objects.get(id = max_id)
         input_path = settings.BASE_DIR + obj.photo.url
+        input_path_two = settings.BASE_DIR + obj.photo_two.url
         output_path = settings.BASE_DIR + "/media/mosaics/output.jpg"
+        output_path_two = settings.BASE_DIR + "/media/mosaics/output_two.jpg"
         gray(input_path,output_path)
+        gray(input_path_two,output_path_two)
  
     return render(request, 'index.html', {
         'form': form,
