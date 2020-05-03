@@ -20,22 +20,22 @@ def index(request):
         input_path_two = settings.BASE_DIR + obj.photo_two.url
         output_path = settings.BASE_DIR + "/media/mosaics/output.jpg"
         output_path_two = settings.BASE_DIR + "/media/mosaics/output_two.jpg"
-        gray(input_path,output_path)
-        gray(input_path_two,output_path_two)
+        swap_faces(input_path,input_path_two,output_path,output_path_two)
  
     return render(request, 'index.html', {
         'form': form,
         'obj': obj
     })
 
-def gray(input_path,output_path):
+def swap_faces(input_path,input_path_two,output_path,output_path_two):
     src = cv2.imread(input_path)
+    src_two = cv2.imread(input_path_two)
 
     def mosaic(src, ratio=0.1):
         small = cv2.resize(src, None, fx=ratio, fy=ratio, interpolation=cv2.INTER_NEAREST)
         return cv2.resize(small, src.shape[:2][::-1], interpolation=cv2.INTER_NEAREST)
     dst_01 = mosaic(src)
-    cv2.imwrite(output_path, dst_01)
+    dst_02 = mosaic(src_two)
 
     def mosaic_area(src, x, y, width, height, ratio=0.1):
         dst = src.copy()
@@ -43,15 +43,20 @@ def gray(input_path,output_path):
         return dst
     
     dst_area = mosaic_area(src, 100, 50, 100, 150)
+    dst_area = mosaic_area(src_two, 100, 50, 100, 150)
     
     face_cascade_path = './haarcascade_frontalface_default.xml'
     face_cascade = cv2.CascadeClassifier(face_cascade_path)
     
     src_gray = cv2.cvtColor(src, cv2.COLOR_BGR2GRAY)
+    src_two_gray = cv2.cvtColor(src_two, cv2.COLOR_BGR2GRAY)
     
     faces = face_cascade.detectMultiScale(src_gray)
+    faces = face_cascade.detectMultiScale(src_two_gray)
     
     for x, y, w, h in faces:
-        dst_face = mosaic_area(src, x, y, w, h)
+        dst_face_01 = mosaic_area(src, x, y, w, h)
+        dst_face_02 = mosaic_area(src_two, x, y, w, h)
     
-        cv2.imwrite(output_path, dst_face)
+        cv2.imwrite(output_path, dst_face_01)
+        cv2.imwrite(output_path_two, dst_face_02)
