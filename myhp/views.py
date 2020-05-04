@@ -48,11 +48,12 @@ def swap_faces(input_path,input_path_two,output_path,output_path_two):
     src_two_gray = cv2.cvtColor(src_two, cv2.COLOR_BGR2GRAY)
     
     faces = face_cascade.detectMultiScale(src_gray)
-    faces = face_cascade.detectMultiScale(src_two_gray)
+    faces_two = face_cascade.detectMultiScale(src_two_gray)
     
     for x, y, w, h in faces:
-        dst_face_01 = mosaic_area(src, src_two, x, y, w, h)
-        dst_face_02 = mosaic_area(src_two, src, x, y, w, h)
-    
-        cv2.imwrite(output_path, dst_face_01)
-        cv2.imwrite(output_path_two, dst_face_02)
+        for a, b, c, d in faces_two:
+            dst_face_01 = mosaic_area(src, src_two, x, y, w, h)
+            dst_face_02 = mosaic_area(src_two, src, a, b, c, d)
+        
+            cv2.imwrite(output_path, dst_face_01)
+            cv2.imwrite(output_path_two, dst_face_02)
