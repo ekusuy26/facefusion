@@ -4,7 +4,9 @@
     <head>
       <meta charset="UTF-8">
       <link rel="stylesheet" href="{% static 'css/myhp.css' %}">
-      <title>Upload</title>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="{% static 'js/preview.js' %}"></script>
+      <title>facefusion</title>
     </head>
   <body>
     <div class="header">
@@ -16,6 +18,12 @@
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
+              <div class="userImgPreview" id="userImgPreview">
+                <img id="thumbnail" class="userImgPreview_content" accept="image/*" src="">
+              </div>
+              <div class="userImgPreview_two" id="userImgPreview_two">
+                <img id="thumbnail_two" class="userImgPreview_content" accept="image/*" src="">
+              </div>
             <button type="submit">Upload</button>
         </form>
         <td>{{ obj.description }}</td>

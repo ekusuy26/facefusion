@@ -35,7 +35,7 @@ h1,h2,h3,h4,h5,h6,p {
 
 .wrap{
   margin-top: 100px;
-  height: calc(100vh - 130px);
+  height: calc(100vh - 120px);
   position: relative;/*←相対位置*/
   overflow: scroll;
 }
@@ -47,8 +47,13 @@ h1,h2,h3,h4,h5,h6,p {
   height: 100%;
 }
 
+.is-img{
+  height: 100px;
+  width: 100px;
+}
+
 .footer{
-  height: 30px;
+  height: 20px;
   width: 100%;
   text-align: center;
   color: #ffffff;
