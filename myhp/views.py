@@ -22,7 +22,7 @@ def index(request):
         output_path_two = settings.BASE_DIR + "/media/mosaics/output_two.jpg"
         swap_faces(input_path,input_path_two,output_path,output_path_two)
  
-    return render(request, 'index.html', {
+    return render(request, 'myhp/index.html', {
         'form': form,
         'obj': obj
     })
