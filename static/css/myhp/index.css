@@ -19,8 +19,12 @@ h1,h2,h3,h4,h5,h6,p {
 
 .header-upper-box{
   height: 55%;
+  padding: 0 20px;
 }
+
 .header-under-box{
+  display: flex;
+  justify-content: space-between;
   color: #ffffff;
   height: 45%;
   background-color: #616161;
@@ -33,10 +37,26 @@ h1,h2,h3,h4,h5,h6,p {
 	  transparent 75%, #424242 75%, #424242 75%);
 }
 
+.header-under-right-box{
+  padding: 0 20px;
+  align-self: center;
+}
+
+.header-link{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.header-logout{
+  text-decoration: none;
+  color: #ffffff;
+  margin-left: 15px;
+}
+
 .wrap{
   margin-top: 100px;
   height: calc(100vh - 120px);
-  position: relative;/*←相対位置*/
+  position: relative;
   overflow: scroll;
 }
 
