@@ -11,7 +11,7 @@ def index(request):
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('myhp:index')
+            return redirect('model_form_upload/')
     else:
         form = DocumentForm()
         max_id = Document.objects.latest('id').id
