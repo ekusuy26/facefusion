@@ -31,20 +31,16 @@ def swap_faces(input_path,input_path_two,output_path,output_path_two):
     src = cv2.imread(input_path)
     src_two = cv2.imread(input_path_two)
 
-    def mosaic(src, ratio=0.1):
+    def mosaic(src, ratio=1):
         small = cv2.resize(src, None, fx=ratio, fy=ratio, interpolation=cv2.INTER_NEAREST)
         return cv2.resize(small, src.shape[:2][::-1], interpolation=cv2.INTER_NEAREST)
-    dst_01 = mosaic(src)
-    dst_02 = mosaic(src_two)
 
-    def mosaic_area(src, x, y, width, height, ratio=0.1):
+    def mosaic_area(src, src_two, x, y, width, height, ratio=1):
         dst = src.copy()
-        dst[y:y + height, x:x + width] = mosaic(dst[y:y + height, x:x + width], ratio)
+        dst_02 = src_two.copy()
+        dst[y:y + height, x:x + width] = mosaic(dst_02[y:y + height, x:x + width], ratio)
         return dst
-    
-    dst_area = mosaic_area(src, 100, 50, 100, 150)
-    dst_area = mosaic_area(src_two, 100, 50, 100, 150)
-    
+
     face_cascade_path = './haarcascade_frontalface_default.xml'
     face_cascade = cv2.CascadeClassifier(face_cascade_path)
     
@@ -55,8 +51,8 @@ def swap_faces(input_path,input_path_two,output_path,output_path_two):
     faces = face_cascade.detectMultiScale(src_two_gray)
     
     for x, y, w, h in faces:
-        dst_face_01 = mosaic_area(src, x, y, w, h)
-        dst_face_02 = mosaic_area(src_two, x, y, w, h)
+        dst_face_01 = mosaic_area(src, src_two, x, y, w, h)
+        dst_face_02 = mosaic_area(src_two, src, x, y, w, h)
     
         cv2.imwrite(output_path, dst_face_01)
         cv2.imwrite(output_path_two, dst_face_02)
