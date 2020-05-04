@@ -5,4 +5,4 @@ from .models import Document
 class DocumentForm(forms.ModelForm):
     class Meta:
         model = Document
-        fields = ('description', 'photo', 'photo_two',)
+        fields = ('photo', 'photo_two',)
