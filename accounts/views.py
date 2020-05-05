@@ -21,6 +21,6 @@ class UserCreateView(CreateView):
     template_name = "accounts/create.html"
     success_url = reverse_lazy("login")
 
-def show(request,id):
+def show(request):
     # images = UserInfo.objects.get(pk=id)
     return render(request, 'accounts/show.html', {})
