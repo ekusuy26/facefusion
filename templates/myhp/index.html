@@ -1,19 +1,19 @@
 {% extends '../shared/base.html' %}
 {% block content %}
   <div class="main">
+    <div class="uploadNote">画像を2枚選択してください</div>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-          <div class="userImgPreview" id="userImgPreview">
-            <img id="thumbnail" class="userImgPreview_content" accept="image/*" src="">
+          <div class="wrapPreview">
+            <div class="userImgPreview" id="userImgPreview">
+              <img id="thumbnail" class="userImgPreview_content" accept="image/*" src="">
+            </div>
+            <div class="userImgPreview_two" id="userImgPreview_two">
+              <img id="thumbnail_two" class="userImgPreview_content" accept="image/*" src="">
+            </div>
           </div>
-          <div class="userImgPreview_two" id="userImgPreview_two">
-            <img id="thumbnail_two" class="userImgPreview_content" accept="image/*" src="">
-          </div>
-        <button type="submit">Upload</button>
+        <button type="submit" class="fusionBtn">fusion</button>
     </form>
-    <td>{{ obj.description }}</td>
-    <td><img src="../media/mosaics/output.jpg" width="100" height="100"/></td>
-    <td><img src="../media/mosaics/output_two.jpg" width="100" height="100"/></td>
   </div>
 {% endblock content %}
