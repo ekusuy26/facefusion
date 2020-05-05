@@ -32,11 +32,20 @@
             <i class="fas fa-user-circle"></i>
             マイページ
           </a>
-          {% endif %}
           <a href="{% url 'logout' %}" class="header-link">
             <i class="fas fa-sign-out-alt"></i>
             ログアウト
           </a>
+          {% else %}
+          <a href="{% url 'login' %}" class="header-link">
+            <i class="fas fa-sign-in-alt"></i>
+            ログイン
+          </a>
+          <a href="{% url 'create' %}" class="header-link">
+            <i class="fas fa-users"></i>
+            新規会員登録
+          </a>
+          {% endif %}
         </div>
       </div>
     </div>
