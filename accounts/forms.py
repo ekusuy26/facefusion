@@ -12,4 +12,4 @@ class LoginForm(auth_forms.AuthenticationForm):
 class DogForm(forms.ModelForm):
     class Meta:
         model = Dog
-        fields = ('dogname', 'age', 'sex', 'introduction', 'image',)
+        fields = ('image', 'dogname', 'age', 'sex', 'introduction',)

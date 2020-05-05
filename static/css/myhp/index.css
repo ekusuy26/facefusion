@@ -74,6 +74,38 @@ h1,h2,h3,h4,h5,h6,p {
   height: 100%;
 }
 
+.dog-registration{
+  padding: 60px 100px;
+}
+
+form{
+  text-align: center;
+}
+
+p{
+  display: flex;
+  display: block;
+  justify-content: space-between;
+}
+
+input{
+  display: block;
+  width: 80%;
+  height: 30px;
+  margin: 0 auto;
+}
+
+#id_introduction{
+  height: 100px;
+}
+
+button{
+  height: 30px;
+  width: 100px;
+  border-radius: 50px;
+  margin: 50px 0;
+}
+
 .is-img{
   height: 100px;
   width: 100px;

@@ -1,6 +1,12 @@
-hogehoge
-<form method="post" enctype="multipart/form-data">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Upload</button>
-</form>
+{% extends '../shared/base.html' %}
+{% block content %}
+<div class="main">
+  <div class="dog-registration">
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Registration</button>
+    </form>
+  </div>
+</div>
+{% endblock content %}
