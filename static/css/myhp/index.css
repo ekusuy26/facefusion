@@ -52,12 +52,7 @@ h1,h2,h3,h4,h5,h6,p {
 .header-link{
   text-decoration: none;
   color: #ffffff;
-}
-
-.header-logout{
-  text-decoration: none;
-  color: #ffffff;
-  margin-left: 15px;
+  margin: 0 20px;
 }
 
 .wrap{
