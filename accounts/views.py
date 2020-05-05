@@ -5,6 +5,7 @@ from django.views.generic import TemplateView,CreateView
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from . import forms
+from .forms import DogForm
 
 class MyLoginView(LoginView):
     form_class = forms.LoginForm
@@ -21,6 +22,9 @@ class UserCreateView(CreateView):
     template_name = "accounts/create.html"
     success_url = reverse_lazy("login")
 
+class DogCreateView(CreateView):
+    form_class = DogForm
+    template_name = "accounts/dog.html"
+
 def show(request):
-    # images = UserInfo.objects.get(pk=id)
     return render(request, 'accounts/show.html', {})

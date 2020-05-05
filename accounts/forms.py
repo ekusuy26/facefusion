@@ -1,4 +1,6 @@
 from django.contrib.auth import forms as auth_forms
+from django import forms
+from .models import Dog
 
 class LoginForm(auth_forms.AuthenticationForm):
     '''ログインフォーム'''
@@ -6,3 +8,8 @@ class LoginForm(auth_forms.AuthenticationForm):
         super().__init__(*args, **kwargs)
         for field in self.fields.values():
             field.widget.attrs['placeholder'] = field.label
+
+class DogForm(forms.ModelForm):
+    class Meta:
+        model = Dog
+        fields = ('dogname', 'age', 'sex', 'introduction', 'image',)
