@@ -8,6 +8,6 @@ local_settings.py
 
 #root起点に除外
 /media/documents
-/media/dog
+/media/dogs
 /work
 /db.sqlite3
