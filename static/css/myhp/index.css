@@ -23,7 +23,7 @@ h1,h2,h3,h4,h5,h6,p {
 }
 
 .logo{
-  /* background-image: url("/static/images/logo.png"); */
+  background-image: url("/static/images/logo.png");
   background-size: contain;
   height: 50px;
   width: 180px;
