@@ -140,8 +140,10 @@ LOGOUT_REDIRECT_URL = 'login' # ログアウト後のリダイレクト
 
 try:
     from .local_settings import *
+    import Image
 except ImportError:
     pass
+    from PIL import Image
 
 if not DEBUG:
     SECRET_KEY = os.environ['SECRET_KEY']
