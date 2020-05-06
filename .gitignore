@@ -3,9 +3,10 @@ __pycache__
 *.pyc
 *.pyo
 img
+local_settings.py
+.DS_Store
 
 #root起点に除外
-/config
 /media
 /work
 /db.sqlite3
