@@ -36,7 +36,7 @@ def show(request):
         dst[y:y + height, x:x + width] = dst_02[y:y + height, x:x + width]
         return dst
 
-    face_cascade_path = './haarcascade_frontalface_default.xml'
+    face_cascade_path = './haarcascade_frontalcatface.xml'
     face_cascade = cv2.CascadeClassifier(face_cascade_path)
     face_cascade_two = cv2.CascadeClassifier(face_cascade_path)
     src_gray = cv2.cvtColor(src, cv2.COLOR_BGR2GRAY)
