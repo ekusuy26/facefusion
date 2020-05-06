@@ -1,6 +1,7 @@
 # README
 ## 【facefusion】取扱説明書
-画像画像画像画像画像画像画像画像画像画像画像画像画像
+![画像名](./reademe-img/top-page.png)
+![画像名](./reademe-img/result-page.png)
 
 ## 本番環境URL
 * https://facefusion.herokuapp.com
@@ -27,7 +28,7 @@
 * Visual Studio Code
 
 ## 実装内容
-* 画像合成機能
+* 画像合成機能(犬の顔検出用のカスケードファイルを自作中の為、現状は猫の画像しか処理できません)
 
 ## 今後の実装予定
 * ペット登録機能
