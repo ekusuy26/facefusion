@@ -4,7 +4,7 @@ from .forms import DocumentForm
 from .models import Document
 from PIL import Image
 from django.conf import settings
-from cv2 import imread, CascadeClassifier, cvtColor, COLOR_BGR2GRAY
+import cv2
  
 def index(request):
     if request.method == 'POST':
