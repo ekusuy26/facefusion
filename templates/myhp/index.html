@@ -4,7 +4,10 @@
     <div class="uploadNote">画像を2枚選択してください</div>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
+        <label> </label>
+        {{ form.photo }}
+        <label> </label>
+        {{ form.photo_two }}
           <div class="wrapPreview">
             <div class="userImgPreview" id="userImgPreview">
               <img id="thumbnail" class="userImgPreview_content" accept="image/*" src="">

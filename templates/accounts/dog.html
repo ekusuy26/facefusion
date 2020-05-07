@@ -2,9 +2,28 @@
 {% block content %}
 <div class="main">
   <div class="dog-registration">
-    <form method="post" enctype="multipart/form-data">
+    <form id="new_dog" method="post" enctype="multipart/form-data">
       {% csrf_token %}
-      {{ form.as_p }}
+      <div class="form-group">
+        <label>dogname</label>
+        {{ form.dogname }}
+      </div>
+      <div class="form-group">
+        <label>age</label>
+        {{ form.age }}
+      </div>
+      <div class="form-group">
+        <label>sex</label>
+        {{ form.sex }}
+      </div>
+      <div class="form-group">
+        <label>introduction</label>
+        {{ form.introduction }}
+      </div>
+      <div class="form-group">
+        <label>image</label>
+        {{ form.image }}
+      </div>
       <button type="submit">Registration</button>
     </form>
   </div>
