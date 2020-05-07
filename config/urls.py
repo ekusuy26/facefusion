@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('myhp.urls')),
     path('', include('accounts.urls')),
+    path('', include('messages.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
