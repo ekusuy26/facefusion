@@ -17,7 +17,7 @@ def index(request):
         else:
             print('chat_regist false is_valid')
 
-    messages = Chat.objects.filter(user_id = request.user.id)
+    messages = Chat.objects.all()
     template = loader.get_template('chat/index.html')
     context = {
         'form': form,
