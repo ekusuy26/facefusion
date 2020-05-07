@@ -216,5 +216,14 @@ h1,h2,h3,h4,h5,h6,p {
 .chatMessage{
   width: 60%;
   line-height: 100%;
+}
+
+.chatMessageMain{
   background-color: blue;
+  height: 80%;
+}
+
+.chatMessageForm{
+  background-color: green;
+  height: 20%;
 }
