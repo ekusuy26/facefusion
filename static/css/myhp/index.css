@@ -215,15 +215,71 @@ h1,h2,h3,h4,h5,h6,p {
 
 .chatMessage{
   width: 60%;
-  line-height: 100%;
 }
 
 .chatMessageMain{
-  background-color: blue;
+  background-color: rgba(0, 255, 255, 0.2);
   height: 80%;
+  overflow: scroll;
 }
 
 .chatMessageForm{
   background-color: green;
   height: 20%;
+}
+
+#new_message{
+  height: 100%;
+  position: relative;
+}
+
+#id_text{
+  width: 80%;
+  height: 90%;
+  position: absolute;
+  left: 5px;
+  top: 4px;
+}
+
+.chatBtn{
+  position: absolute;
+  right: 5px;
+  top: 4px;
+}
+
+.messageBox{
+  display: flex;
+  position: relative;
+}
+
+.commentUser{
+  margin: 5px 0;
+  position: absolute;
+  right: 0;
+  width: 50px;
+}
+
+.myComment {
+  margin: 5px 50px 5px auto;
+}
+.myComment .myCommentText {
+  display: inline-block;
+  position: relative; 
+  margin: 0 10px 0 0;
+  padding: 8px;
+  max-width: 250px;
+  border-radius: 12px;
+  background: #30e852;
+  font-size: 15px:
+}
+
+.myComment .myCommentText:after {
+  content: "";
+  position: absolute;
+  top: 3px; 
+  right: -19px;
+  border: 8px solid transparent;
+  border-left: 18px solid #30e852;
+  -webkit-transform: rotate(-35deg);
+  transform: rotate(-35deg);
 }
