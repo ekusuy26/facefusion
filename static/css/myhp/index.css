@@ -71,6 +71,43 @@ h1,h2,h3,h4,h5,h6,p {
   text-align: center;
 }
 
+.dog-registration{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.form-group{
+  padding: 5px 0;
+}
+.form-group-img{
+  height: 200px;
+}
+
+.newDogLabel{
+  display: block;
+}
+
+#id_dogname{
+  width: 60%;
+  height: 25px;
+}
+#id_age{
+  width: 60%;
+  height: 25px;
+}
+#id_sex{
+  width: 60%;
+  height: 25px;
+}
+#id_introduction{
+  width: 60%;
+  height: 100px;
+}
+#id_image{
+  width: 60%;
+  height: 25px;
+}
+
 .uploadImg{
   padding-top: 200px;
 }
@@ -80,9 +117,12 @@ h1,h2,h3,h4,h5,h6,p {
   font-size: larger;
 }
 
-form{
+#new_fusion{
   height: 70%;
   padding-bottom: 100px;
+}
+
+#new_dog{
 }
 
 .wrapPreview{
@@ -96,17 +136,30 @@ form{
   height: 200px;
   width: 200px;
 }
+.is-dogImg{
+  height: 150px;
+  width: 150px;
+}
 
 .is-active{
   width: 40%;
+  margin: 0 auto;
 }
 
 .fusionBtn{
   height: 50px;
-  width: 80px;
+  width: 120px;
   font-size: 14px;
   border-radius: 10px;
   background-color: #00FFFF;
+}
+.dogBtn{
+  height: 50px;
+  width: 120px;
+  font-size: 14px;
+  border-radius: 10px;
+  background-color: #00FFFF;
+  margin-top: 20px;
 }
 
 .myPageUserName{

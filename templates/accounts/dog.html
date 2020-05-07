@@ -4,27 +4,30 @@
   <div class="dog-registration">
     <form id="new_dog" method="post" enctype="multipart/form-data">
       {% csrf_token %}
+      <div class="form-group-img">
+        <label class="newDogLabel">image</label>
+          <div class="userImgPreview" id="userImgPreview">
+            <img id="thumbnail" class="userImgPreview_content" accept="image/*" src="">
+          </div>
+        {{ form.image }}
+      </div>
       <div class="form-group">
-        <label>dogname</label>
+        <label class="newDogLabel">dogname</label>
         {{ form.dogname }}
       </div>
       <div class="form-group">
-        <label>age</label>
+        <label class="newDogLabel">age</label>
         {{ form.age }}
       </div>
       <div class="form-group">
-        <label>sex</label>
+        <label class="newDogLabel">sex</label>
         {{ form.sex }}
       </div>
       <div class="form-group">
-        <label>introduction</label>
+        <label class="newDogLabel">introduction</label>
         {{ form.introduction }}
       </div>
-      <div class="form-group">
-        <label>image</label>
-        {{ form.image }}
-      </div>
-      <button type="submit">Registration</button>
+      <button type="submit" class="dogBtn">Registration</button>
     </form>
   </div>
 </div>

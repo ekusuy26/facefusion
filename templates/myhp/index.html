@@ -1,8 +1,8 @@
 {% extends '../shared/base.html' %}
 {% block content %}
   <div class="main">
-    <div class="uploadNote">画像を2枚選択してください</div>
-    <form method="post" enctype="multipart/form-data">
+    <div class="uploadNote">Please select two images</div>
+    <form id="new_fusion" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <label> </label>
         {{ form.photo }}
