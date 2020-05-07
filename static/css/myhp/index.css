@@ -65,8 +65,9 @@ h1,h2,h3,h4,h5,h6,p {
 .main{
   background-color: #ffffff;
   margin: 0 auto;
+  padding: 20px 0;
   width: 500px;
-  height: 100%;
+  min-height: 100%;
   text-align: center;
 }
 
@@ -106,6 +107,31 @@ form{
   font-size: 14px;
   border-radius: 10px;
   background-color: #00FFFF;
+}
+
+.myPageUserName{
+}
+
+.dogBox{
+  width: 90%;
+  margin: 15px auto;
+  display: flex;
+  background-color: #EEFFFF;
+  box-shadow: 5px 5px 5px #999;
+}
+
+.dogImg{
+  width: 150px;
+  height: 150px;
+}
+
+.dogExplanation{
+  width: calc(100% - 150px);
+}
+
+.explanationGroup{
+  padding: 0 10px;
+  text-align: left;
 }
 
 .footer{

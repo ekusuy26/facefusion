@@ -7,6 +7,7 @@ from django.urls import reverse_lazy
 from . import forms
 from .forms import DogForm
 from django.http import HttpResponse
+from .models import Dog
 
 class MyLoginView(LoginView):
     form_class = forms.LoginForm
@@ -43,4 +44,5 @@ def regist(request):
     return HttpResponse(template.render(context, request))
 
 def show(request):
-    return render(request, 'accounts/show.html', {})
+    dogs = Dog.objects.filter(user_id = request.user.id)
+    return render(request, 'accounts/show.html', {'dogs': dogs})
