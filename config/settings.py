@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'fontawesome',
     'myhp',
     'accounts',
-    'messages',
     'storages',
 ]
 
