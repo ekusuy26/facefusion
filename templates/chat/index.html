@@ -3,12 +3,19 @@
 <div class="chatWrap">
   <div class="chatGroup">
     {% for crew in crews %}
-    <a href="{% url 'chat:show' id=crew.id %}" class="link">
-      {{ crew.name }}
-    </a>
+    <div class="crewLinkBox">
+      <a href="{% url 'chat:show' id=crew.id %}" class="crewLink">
+        {{ crew.name }}
+      </a>
+    </div>
     {% endfor%}
   </div>
-  <div class="kari">ロゴでもいれよかな
+  {% block chatMessage %}
+  <div class="chatLogoWrap">
+    <div class="chatLogo">
+    </div>
   </div>
+  <!-- content -->
+  {% endblock %}
 </div>
 {% endblock content %}

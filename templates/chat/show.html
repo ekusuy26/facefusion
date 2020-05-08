@@ -1,59 +1,48 @@
-{% extends '../shared/base.html' %}
-{% block content %}
-<div class="chatWrap">
-  <div class="chatGroup">
-    {% for crew in crews %}
-    <div class="crewLinkBox">
-      <a href="{% url 'chat:show' id=crew.id %}" class="crewLink">
-        {{ crew.name }}
-      </a>
+{% extends './index.html' %}
+{% block chatMessage %}
+<div class="chatMessage">
+  <div class="chatMessageMain">
+    {% for chat in chats %}
+    <div class="messageBox">
+      {% if chat.user.id == request.user.id %}
+      <div class="myComment">
+        <p class="myCommentText">
+          {{ chat.text}}
+          {{ chat.group.name}}
+        </p>
+      </div>
+      <div class="commentUser">
+        <div class="test">
+          <i class="fas fa-user-alt"></i>
+        </div>
+        <div class="test">
+          {{ chat.user.username}}
+        </div>
+      </div>
+      {% else %}
+      <div class="theircommentUser">
+        <div class="test">
+          <i class="fas fa-user-alt"></i>
+        </div>
+        <div class="test">
+          {{ chat.user.username}}
+        </div>
+      </div>
+      <div class="theirComment">
+        <p class="theirCommentText">
+          {{ chat.text}}
+        </p>
+      </div>
+      {% endif %}
     </div>
     {% endfor%}
   </div>
-  <div class="chatMessage">
-    <div class="chatMessageMain">
-      {% for chat in chats %}
-      <div class="messageBox">
-        {% if chat.user.id == request.user.id %}
-        <div class="myComment">
-          <p class="myCommentText">
-            {{ chat.text}}
-            {{ chat.group.name}}
-          </p>
-        </div>
-        <div class="commentUser">
-          <div class="test">
-            <i class="fas fa-user-alt"></i>
-          </div>
-          <div class="test">
-            {{ chat.user.username}}
-          </div>
-        </div>
-        {% else %}
-        <div class="theircommentUser">
-          <div class="test">
-            <i class="fas fa-user-alt"></i>
-          </div>
-          <div class="test">
-            {{ chat.user.username}}
-          </div>
-        </div>
-        <div class="theirComment">
-          <p class="theirCommentText">
-            {{ chat.text}}
-          </p>
-        </div>
-        {% endif %}
-      </div>
-      {% endfor%}
-    </div>
-    <div class="chatMessageForm">
-      <form id="new_message" action="" method="POST">
-        {% csrf_token %}
-        {{ form.text }}
-        <button type="submit" class="chatBtn">送信</button>
-      </form>
-    </div>
+  <div class="chatMessageForm">
+    <form id="new_message" action="" method="POST">
+      {% csrf_token %}
+      {{ form.text }}
+      <button type="submit" class="chatBtn">送信</button>
+    </form>
   </div>
 </div>
-{% endblock content %}
+{% endblock chatMessage %}
