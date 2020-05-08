@@ -2,50 +2,13 @@
 {% block content %}
 <div class="chatWrap">
   <div class="chatGroup">
+    {% for crew in crews %}
+    <a href="{% url 'chat:show' id=crew.id %}" class="link">
+      {{ crew.name }}
+    </a>
+    {% endfor%}
   </div>
-  <div class="chatMessage">
-    <div class="chatMessageMain">
-      {% for message in messages %}
-      <div class="messageBox">
-        {% if message.user.id == request.user.id %}
-        <div class="myComment">
-          <p class="myCommentText">
-            {{ message.text}}
-          </p>
-        </div>
-        <div class="commentUser">
-          <div class="test">
-            <i class="fas fa-user-alt"></i>
-          </div>
-          <div class="test">
-            {{ message.user.username}}
-          </div>
-        </div>
-        {% else %}
-        <div class="theircommentUser">
-          <div class="test">
-            <i class="fas fa-user-alt"></i>
-          </div>
-          <div class="test">
-            {{ message.user.username}}
-          </div>
-        </div>
-        <div class="theirComment">
-          <p class="theirCommentText">
-            {{ message.text}}
-          </p>
-        </div>
-        {% endif %}
-      </div>
-      {% endfor%}
-    </div>
-    <div class="chatMessageForm">
-      <form id="new_message" action="" method="POST">
-        {% csrf_token %}
-        {{ form.text }}
-        <button type="submit" class="chatBtn">送信</button>
-      </form>
-    </div>
+  <div class="kari">ロゴでもいれよかな
   </div>
 </div>
 {% endblock content %}

@@ -10,3 +10,7 @@ class Dog(models.Model):
     sex = models.CharField(max_length=100)
     introduction = models.CharField(max_length=255)
     image = models.ImageField(upload_to="dogs/")
+
+class Crew(models.Model):
+    users = models.ManyToManyField(User, verbose_name='ユーザー')
+    name = models.CharField(max_length=20)
