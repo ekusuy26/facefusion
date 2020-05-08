@@ -7,7 +7,6 @@ local_settings.py
 .DS_Store
 
 #root起点に除外
-/media/documents
-/media/dogs
+/media
 /work
 /db.sqlite3
