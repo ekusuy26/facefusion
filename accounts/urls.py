@@ -6,5 +6,6 @@ urlpatterns = [
     path('accounts/create/', views.UserCreateView.as_view(),name="create"),
     path('accounts/dog/create', views.regist,name="dog"),
     path('accounts/show/', views.show,name="show"),
-    path('index/',views.IndexView.as_view(), name="index")
+    path('index/',views.IndexView.as_view(), name="index"),
+    path('<int:pk>/delete/', views.DogDelete.as_view(), name='delete'),
 ]

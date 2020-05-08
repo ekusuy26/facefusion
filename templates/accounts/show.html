@@ -24,6 +24,7 @@
         <label>introduction：</label>
         {{ dog.introduction }}
       </div>
+      <a href="{% url 'delete' dog.pk %}">削除</a>
     </div>
   </div>
   {% endfor%}

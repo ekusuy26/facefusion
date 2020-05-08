@@ -1,7 +1,7 @@
 from django.shortcuts import render, loader, redirect
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import TemplateView,CreateView
+from django.views.generic import TemplateView,CreateView,DeleteView
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from . import forms
@@ -46,3 +46,8 @@ def regist(request):
 def show(request):
     dogs = Dog.objects.filter(user_id = request.user.id)
     return render(request, 'accounts/show.html', {'dogs': dogs})
+
+class DogDelete(DeleteView):
+    template_name = 'accounts/dog_delete.html'
+    model = Dog
+    success_url = reverse_lazy('show')

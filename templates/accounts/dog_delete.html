@@ -1,0 +1,31 @@
+{% extends '../shared/base.html' %}
+{% block content %}
+<div class="main">
+  <form method="post">
+    {% csrf_token %}
+    <div class="dogBox">
+      <img src="{{ dog.image.url }}" class="dogImg" />
+      <div class="dogExplanation">
+        <div class="explanationGroup">
+          <label>dogname：</label>
+          {{ dog.dogname }}
+        </div>
+        <div class="explanationGroup">
+          <label>age：</label>
+          {{ dog.age }}
+        </div>
+        <div class="explanationGroup">
+          <label>sex：</label>
+          {{ dog.sex }}
+        </div>
+        <div class="explanationGroup">
+          <label>introduction：</label>
+          {{ dog.introduction }}
+        </div>
+      </div>
+    </div>
+    <p>Do you really want to delete this?</p>
+        <input type="submit" value="DELITE">
+  </form>
+</div>
+{% endblock content %}
