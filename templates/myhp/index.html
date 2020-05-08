@@ -1,22 +1,22 @@
 {% extends '../shared/base.html' %}
 {% block content %}
-  <div class="main">
-    <div class="uploadNote">Please select two images</div>
-    <form id="new_fusion" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <label> </label>
-        {{ form.photo }}
-        <label> </label>
-        {{ form.photo_two }}
-          <div class="wrapPreview">
-            <div class="userImgPreview" id="userImgPreview">
-              <img id="thumbnail" class="userImgPreview_content" accept="image/*" src="">
-            </div>
-            <div class="userImgPreview_two" id="userImgPreview_two">
-              <img id="thumbnail_two" class="userImgPreview_content" accept="image/*" src="">
-            </div>
-          </div>
-        <button type="submit" class="fusionBtn">fusion</button>
-    </form>
-  </div>
+<div class="main">
+  <div class="uploadNote">Please select two images</div>
+  <form id="new_fusion" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label> </label>
+    {{ form.photo }}
+    <label> </label>
+    {{ form.photo_two }}
+    <div class="wrapPreview">
+      <div class="userImgPreview" id="userImgPreview">
+        <img id="thumbnail" class="userImgPreview_content" accept="image/*" src="">
+      </div>
+      <div class="userImgPreview_two" id="userImgPreview_two">
+        <img id="thumbnail_two" class="userImgPreview_content" accept="image/*" src="">
+      </div>
+    </div>
+    <button type="submit" class="fusionBtn">fusion</button>
+  </form>
+</div>
 {% endblock content %}

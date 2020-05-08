@@ -21,11 +21,17 @@
         {{ dog.sex }}
       </div>
       <div class="explanationGroup">
-        <label>introduction：</label>
+        <label>intro：</label>
         {{ dog.introduction }}
       </div>
-      <a href="{% url 'delete' dog.pk %}">削除</a>
-      <a href="{% url 'update' dog.pk %}">編集</a>
+      <div class="dogLinkBox">
+        <a href="{% url 'update' dog.pk %}" class="dogLink">
+          <i class="fas fa-edit"></i>
+        </a>
+        <a href="{% url 'delete' dog.pk %}" class="dogLink">
+          <i class="fas fa-trash-alt"></i>
+        </a>
+      </div>
     </div>
   </div>
   {% endfor%}

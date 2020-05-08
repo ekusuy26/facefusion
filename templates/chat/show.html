@@ -41,7 +41,9 @@
     <form id="new_message" action="" method="POST">
       {% csrf_token %}
       {{ form.text }}
-      <button type="submit" class="chatBtn">送信</button>
+      <button type="submit" class="chatBtn">
+        <i class="fas fa-paper-plane"></i>
+      </button>
     </form>
   </div>
 </div>
