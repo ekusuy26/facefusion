@@ -270,7 +270,6 @@ h1,h2,h3,h4,h5,h6,p {
 
 .chatMessageForm{
   background-color: rgba(0, 255, 255, 0.3);
-  /* background-color: #444444; */
   height: 20%;
 }
 
@@ -366,3 +365,4 @@ h1,h2,h3,h4,h5,h6,p {
   -webkit-transform: rotate(35deg);
   transform: rotate(35deg);
 }
+
