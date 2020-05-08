@@ -8,4 +8,5 @@ urlpatterns = [
     path('accounts/show/', views.show,name="show"),
     path('index/',views.IndexView.as_view(), name="index"),
     path('<int:pk>/delete/', views.DogDelete.as_view(), name='delete'),
+    path('<int:pk>/update/', views.DogUpdate.as_view(), name='update'),
 ]

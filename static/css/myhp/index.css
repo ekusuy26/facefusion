@@ -65,7 +65,7 @@ h1,h2,h3,h4,h5,h6,p {
 .main{
   background-color: #ffffff;
   margin: 0 auto;
-  padding: 20px 0;
+  /* padding: 20px 0; */
   width: 500px;
   min-height: 100%;
   text-align: center;
@@ -80,7 +80,7 @@ h1,h2,h3,h4,h5,h6,p {
   padding: 5px 0;
 }
 .form-group-img{
-  height: 200px;
+  height: 220px;
 }
 
 .newDogLabel{

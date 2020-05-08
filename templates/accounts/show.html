@@ -25,6 +25,7 @@
         {{ dog.introduction }}
       </div>
       <a href="{% url 'delete' dog.pk %}">削除</a>
+      <a href="{% url 'update' dog.pk %}">編集</a>
     </div>
   </div>
   {% endfor%}

@@ -1,9 +1,9 @@
 from django.shortcuts import render, loader, redirect
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import TemplateView,CreateView,DeleteView
+from django.views.generic import TemplateView,CreateView,DeleteView, UpdateView
 from django.contrib.auth.forms import UserCreationForm
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from . import forms
 from .forms import DogForm
 from django.http import HttpResponse
@@ -50,4 +50,10 @@ def show(request):
 class DogDelete(DeleteView):
     template_name = 'accounts/dog_delete.html'
     model = Dog
+    success_url = reverse_lazy('show')
+
+class DogUpdate(UpdateView):
+    template_name = 'accounts/dog.html'
+    model = Dog
+    fields = ['image', 'dogname', 'age', 'sex', 'introduction']
     success_url = reverse_lazy('show')
