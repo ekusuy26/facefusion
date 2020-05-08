@@ -3,20 +3,22 @@
 <div class="chatWrap">
   <div class="chatGroup">
     {% for crew in crews %}
-    <a href="{% url 'chat:show' id=crew.id %}" class="link">
-    {{ crew.name }}
-    </a>
+    <div class="crewLinkBox">
+      <a href="{% url 'chat:show' id=crew.id %}" class="crewLink">
+        {{ crew.name }}
+      </a>
+    </div>
     {% endfor%}
   </div>
   <div class="chatMessage">
     <div class="chatMessageMain">
-      {% for message in messages %}
+      {% for chat in chats %}
       <div class="messageBox">
-        {% if message.user.id == request.user.id %}
+        {% if chat.user.id == request.user.id %}
         <div class="myComment">
           <p class="myCommentText">
-            {{ message.text}}
-            {{ message.group.name}}
+            {{ chat.text}}
+            {{ chat.group.name}}
           </p>
         </div>
         <div class="commentUser">
@@ -24,7 +26,7 @@
             <i class="fas fa-user-alt"></i>
           </div>
           <div class="test">
-            {{ message.user.username}}
+            {{ chat.user.username}}
           </div>
         </div>
         {% else %}
@@ -33,12 +35,12 @@
             <i class="fas fa-user-alt"></i>
           </div>
           <div class="test">
-            {{ message.user.username}}
+            {{ chat.user.username}}
           </div>
         </div>
         <div class="theirComment">
           <p class="theirCommentText">
-            {{ message.text}}
+            {{ chat.text}}
           </p>
         </div>
         {% endif %}

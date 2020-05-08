@@ -210,7 +210,17 @@ h1,h2,h3,h4,h5,h6,p {
 .chatGroup{
   width: 40%;
   line-height: 100%;
-  background-color: red;
+  background-color: rgba(0, 255, 255, 0.4);
+}
+
+.crewLinkBox{
+  height: 2rem;
+}
+
+.crewLink{
+  line-height: 2rem;
+  text-decoration: none;
+  color: #000000;
 }
 
 .chatMessage{
