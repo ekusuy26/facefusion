@@ -1,0 +1,430 @@
+body {
+  background-color: #f0f0f0;
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+  font-family: "Montserrat","游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+.header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100px;
+}
+
+.header-upper-box{
+  height: 55%;
+  padding: 0 20px;
+}
+
+.logo{
+  background-image: url("/static/images/logo.png");
+  background-size: contain;
+  height: 50px;
+  width: 180px;
+}
+
+.header-under-box{
+  display: flex;
+  justify-content: space-between;
+  color: #ffffff;
+  height: 45%;
+  background-color: #616161;
+	background-size: 10px 10px;
+	background-position: 0 0, 5px 5px;
+	background-image:
+	 linear-gradient(45deg,  #424242 25%, #424242 25%, transparent 25%,
+	  transparent 75%, #424242 75%, #424242 75%),
+	 linear-gradient(-135deg, #424242 25%, #424242 25%, transparent 25%,
+	  transparent 75%, #424242 75%, #424242 75%);
+}
+
+.header-under-right-box{
+  padding: 0 20px;
+  align-self: center;
+}
+
+.header-link{
+  text-decoration: none;
+  color: #ffffff;
+  margin: 0 20px;
+}
+
+.wrap{
+  margin-top: 100px;
+  height: calc(100vh - 120px);
+  position: relative;
+  overflow: scroll;
+}
+
+.main{
+  background-color: #ffffff;
+  margin: 0 auto;
+  width: 500px;
+  min-height: 100%;
+  text-align: center;
+}
+
+.dog-registration{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.form-group{
+  padding: 5px 0;
+}
+.form-group-img{
+  height: 220px;
+}
+
+.newDogLabel{
+  display: block;
+}
+
+#id_dogname{
+  width: 60%;
+  height: 25px;
+}
+#id_age{
+  width: 60%;
+  height: 25px;
+}
+#id_sex{
+  width: 60%;
+  height: 25px;
+}
+#id_introduction{
+  width: 60%;
+  height: 100px;
+}
+#id_image{
+  width: 60%;
+  height: 25px;
+}
+
+.uploadImg{
+  padding-top: 40px;
+}
+
+.resultImg{
+  padding-bottom: 40px;
+}
+
+.arrow{
+  margin: 50px 0;
+}
+
+.uploadNote{
+  padding-top: 50px;
+  font-size: larger;
+}
+
+#new_fusion{
+  height: 70%;
+  padding-bottom: 100px;
+}
+
+.wrapPreview{
+  display: flex;
+  justify-content: space-around;
+  height: 300px;
+  margin-top: 50px;
+}
+
+.is-img{
+  height: 200px;
+  width: 200px;
+}
+.is-dogImg{
+  height: 150px;
+  width: 150px;
+}
+
+.is-active{
+  width: 40%;
+  margin: 0 auto;
+}
+
+.fusionBtn{
+  height: 50px;
+  width: 120px;
+  font-size: 14px;
+  border-radius: 10px;
+  background-color: #00FFFF;
+}
+.dogBtn{
+  height: 50px;
+  width: 120px;
+  font-size: 14px;
+  border-radius: 10px;
+  background-color: #00FFFF;
+  margin-top: 20px;
+}
+
+.dogBox{
+  width: 90%;
+  margin: 15px auto;
+  display: flex;
+  background-color: #EEFFFF;
+  box-shadow: 5px 5px 5px #999;
+  position: relative;
+}
+
+.dogImg{
+  width: 150px;
+  height: 150px;
+}
+
+.dogExplanation{
+  width: calc(100% - 150px);
+}
+
+.explanationGroup{
+  padding: 0 10px;
+  text-align: left;
+}
+
+.dogLinkBox{
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+.dogLink{
+  text-decoration: none;
+  color: #000000;
+  margin: 0 10px;
+}
+
+.footer{
+  height: 20px;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  background-color: black;
+  position: absolute;/*←絶対位置*/
+  bottom: 0; /*下に固定*/
+}
+
+/* chat用 */
+
+.chatLogoWrap{
+  width: 60%;
+  position: relative;
+}
+
+.chatLogo{
+  background-image: url("/static/images/chatlogo.png");
+  background-size: contain;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.chatWrap{
+  display: flex;
+  background-color: #ffffff;
+  margin: 0 auto;
+  width: 500px;
+  min-height: 100%;
+  text-align: center;
+}
+
+.chatGroup{
+  width: 40%;
+  line-height: 100%;
+  background-color: rgba(0, 255, 255, 0.4);
+  padding: 1rem 0;
+  overflow: scroll;
+}
+
+.createGroupBox{
+  background-color: #000000;
+  height: 50px;
+}
+
+.createGroupLink{
+  color: #505050;
+  padding: 0.5em;
+  display: inline-block;
+  line-height: 1.3;
+  background: #8dc0e9;
+  vertical-align: middle;
+  border-radius: 25px 25px 25px 25px;
+  text-decoration: none;
+  width: 90%;
+  text-align: left;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.createGroupLink:before {
+  content: '●';
+  color: white;
+  margin-right: 8px;
+  text-decoration: none;
+}
+
+.formCreateGroup{
+  background-color: #ffffff;
+  width: 300px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 20px 0 30px 0;
+}
+
+.crewLinkBox{
+  height: 3rem;
+}
+
+.crewLink{
+  color: #505050;
+  padding: 0.5em;
+  display: inline-block;
+  line-height: 1.3;
+  background: #dbebf8;
+  vertical-align: middle;
+  border-radius: 25px 0px 0px 25px;
+  text-decoration: none;
+  width: 70%;
+  text-align: left;
+  font-size: 15px;
+}
+
+.crewLink:before {
+  content: '●';
+  color: white;
+  margin-right: 8px;
+  text-decoration: none;
+}
+
+.chatMessage{
+  width: 60%;
+}
+
+.chatMessageMain{
+  background-color: rgba(0, 255, 255, 0.2);
+  height: 80%;
+  overflow: scroll;
+}
+
+.chatMessageForm{
+  background-color: rgba(0, 255, 255, 0.3);
+  height: 20%;
+}
+
+#new_message{
+  height: 100%;
+  position: relative;
+}
+
+#id_text{
+  width: 80%;
+  height: 90%;
+  position: absolute;
+  left: 5px;
+  top: 4px;
+}
+
+.chatBtn{
+  position: absolute;
+  right: 5px;
+  top: 4px;
+  font-size: 20px;
+  border-radius: 10px;
+  width: 40px;
+}
+
+.messageBox{
+  display: flex;
+  position: relative;
+  font-size: 12px;
+  padding: 5px;
+}
+
+.commentUser{
+  margin: 5px 0;
+  position: absolute;
+  right: 0;
+  width: 50px;
+  height: 35px;
+  overflow: hidden;
+}
+
+.myComment {
+  margin: 5px 50px 5px auto;
+  position: relative;
+}
+
+.commentDeleteIcon{
+  position: absolute;
+  bottom: 0;
+  right: -10px;
+  color: #000000;
+}
+
+.myComment .myCommentText {
+  display: inline-block;
+  position: relative; 
+  margin: 0 10px 0 0;
+  padding: 8px;
+  max-width: 150px;
+  border-radius: 12px;
+  background: #30e852;
+  font-size: 15px;
+}
+
+.myComment .myCommentText:after {
+  content: "";
+  position: absolute;
+  top: 3px; 
+  right: -19px;
+  border: 8px solid transparent;
+  border-left: 18px solid #30e852;
+  -webkit-transform: rotate(-35deg);
+  transform: rotate(-35deg);
+}
+
+.theircommentUser{
+  margin: 5px 0;
+  right: 0;
+  width: 50px;
+  height: 35px;
+  overflow: hidden;
+}
+
+.theirComment {
+  margin: 5px 0;
+}
+.theirComment .theirCommentText {
+  display: inline-block;
+  position: relative; 
+  margin: 0 10px 0 0;
+  padding: 8px;
+  max-width: 150px;
+  border-radius: 12px;
+  background: #ffffff;
+  font-size: 15px;
+}
+
+.theirComment .theirCommentText:after {
+  content: "";
+  position: absolute;
+  top: 3px; 
+  left: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #ffffff;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+
