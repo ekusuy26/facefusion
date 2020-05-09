@@ -65,7 +65,6 @@ h1,h2,h3,h4,h5,h6,p {
 .main{
   background-color: #ffffff;
   margin: 0 auto;
-  /* padding: 20px 0; */
   width: 500px;
   min-height: 100%;
   text-align: center;
@@ -109,7 +108,15 @@ h1,h2,h3,h4,h5,h6,p {
 }
 
 .uploadImg{
-  padding-top: 200px;
+  padding-top: 40px;
+}
+
+.resultImg{
+  padding-bottom: 40px;
+}
+
+.arrow{
+  margin: 50px 0;
 }
 
 .uploadNote{
@@ -120,9 +127,6 @@ h1,h2,h3,h4,h5,h6,p {
 #new_fusion{
   height: 70%;
   padding-bottom: 100px;
-}
-
-#new_dog{
 }
 
 .wrapPreview{
@@ -160,9 +164,6 @@ h1,h2,h3,h4,h5,h6,p {
   border-radius: 10px;
   background-color: #00FFFF;
   margin-top: 20px;
-}
-
-.myPageUserName{
 }
 
 .dogBox{

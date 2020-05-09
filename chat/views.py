@@ -2,7 +2,7 @@ from django.shortcuts import render, loader, redirect
 from django.http import HttpResponse
 from .models import Chat
 from accounts.models import Crew
-from .forms import ChatForm
+from .forms import ChatForm, CrewForm
 from django.contrib.auth.models import User
 from django.views.generic import DeleteView
 from django.urls import reverse_lazy
@@ -41,3 +41,17 @@ def delete(request, pk):
     crew_id = Chat.objects.get(id=pk).crew_id
     Chat.objects.filter(id=pk).delete()
     return redirect('/chat/' + str(crew_id))
+
+def new(request):
+    if request.method == 'GET':
+        form = CrewForm()
+    else:
+        form = CrewForm(request.POST)
+        if form.is_valid():
+            print('chat_regist is_valid')
+            form.save(request.POST)
+            return redirect('/chat')
+        else:
+            print('chat_regist false is_valid')
+
+    return render(request, 'chat/crew_new.html', {'form': form,})
