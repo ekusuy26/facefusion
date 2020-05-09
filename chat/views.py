@@ -50,6 +50,8 @@ def new(request):
         if form.is_valid():
             print('chat_regist is_valid')
             form.save(request.POST)
+            test = Crew.objects.latest('id')
+            test.users.add(request.user)
             return redirect('/chat')
         else:
             print('chat_regist false is_valid')
