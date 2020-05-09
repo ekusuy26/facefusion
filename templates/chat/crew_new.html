@@ -1,6 +1,11 @@
-hogehoge
-<form method="post" enctype="multipart/form-data">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit" class="fusionBtn">fusion</button>
-</form>
+{% extends '../shared/base.html' %}
+{% block content %}
+<div class="formCreateGroup">
+  <p>Please enter the group name.</p>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="dogBtn">CreateGroup</button>
+  </form>
+</div>
+{% endblock content %}
