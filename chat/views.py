@@ -4,6 +4,9 @@ from .models import Chat
 from accounts.models import Crew
 from .forms import ChatForm
 from django.contrib.auth.models import User
+from django.views.generic import DeleteView
+from django.urls import reverse_lazy
+
 
 # Create your views here.
 def index(request):
@@ -33,3 +36,8 @@ def show(request, id):
         'crews' : crews,
     }
     return HttpResponse(template.render(context, request))
+
+def delete(request, pk):
+    crew_id = Chat.objects.get(id=pk).crew_id
+    Chat.objects.filter(id=pk).delete()
+    return redirect('/chat/' + str(crew_id))

@@ -326,7 +326,16 @@ h1,h2,h3,h4,h5,h6,p {
 
 .myComment {
   margin: 5px 50px 5px auto;
+  position: relative;
 }
+
+.commentDeleteIcon{
+  position: absolute;
+  bottom: 0;
+  right: -10px;
+  color: #000000;
+}
+
 .myComment .myCommentText {
   display: inline-block;
   position: relative; 

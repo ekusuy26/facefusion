@@ -8,7 +8,9 @@
       <div class="myComment">
         <p class="myCommentText">
           {{ chat.text}}
-          {{ chat.group.name}}
+          <a href="{% url 'chat:delete' chat.pk %}" class="commentDeleteIcon">
+            <i class="fas fa-trash-alt" style="font-size: 9px;"></i>
+          </a>
         </p>
       </div>
       <div class="commentUser">
