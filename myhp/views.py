@@ -9,8 +9,13 @@ import cv2
 def index(request):
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
-        form.instance.out_put = "mosaics/output1.jpg"
-        form.instance.out_put_two = "mosaics/output_two1.jpg"
+        try:
+            max_id = Document.objects.latest('id').id
+            form.instance.out_put = "mosaics/output" + str(max_id + 1) + ".jpg"
+            form.instance.out_put_two = "mosaics/output_two" + str(max_id + 1) + ".jpg"
+        except:
+            form.instance.out_put = "mosaics/output1.jpg"
+            form.instance.out_put_two = "mosaics/output_two1.jpg"
         if form.is_valid():
             form.save()
             return redirect('upload/')
