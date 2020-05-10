@@ -31,8 +31,8 @@ def show(request):
     obj = Document.objects.get(id = max_id)
     input_path = settings.BASE_DIR + obj.photo.url
     input_path_two = settings.BASE_DIR + obj.photo_two.url
-    output_path = settings.BASE_DIR + "/media/mosaics/output" + str(max_id) + ".jpg"
-    output_path_two = settings.BASE_DIR + "/media/mosaics/output_two" + str(max_id) + ".jpg"
+    output_path = settings.BASE_DIR + "/media/mosaics/output1.jpg"
+    output_path_two = settings.BASE_DIR + "/media/mosaics/output_two1.jpg"
     src = cv2.imread(input_path)
     src_two = cv2.imread(input_path_two)
     img = src.copy()
