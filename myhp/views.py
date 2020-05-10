@@ -9,13 +9,8 @@ import cv2
 def index(request):
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
-        try:
-            max_id = Document.objects.latest('id').id
-            form.instance.out_put = "mosaics/output" + str(max_id + 1) + ".jpg"
-            form.instance.out_put_two = "mosaics/output_two" + str(max_id + 1) + ".jpg"
-        except:
-            form.instance.out_put = "mosaics/output1.jpg"
-            form.instance.out_put_two = "mosaics/output_two1.jpg"
+        form.instance.out_put = "mosaics/output1.jpg"
+        form.instance.out_put_two = "mosaics/output_two1.jpg"
         if form.is_valid():
             form.save()
             return redirect('upload/')
@@ -31,8 +26,8 @@ def show(request):
     obj = Document.objects.get(id = max_id)
     input_path = settings.BASE_DIR + obj.photo.url
     input_path_two = settings.BASE_DIR + obj.photo_two.url
-    output_path = settings.BASE_DIR + "/media/mosaics/output.jpg"
-    output_path_two = settings.BASE_DIR + "/media/mosaics/output_two.jpg"
+    output_path = settings.BASE_DIR + "/media/mosaics/output" + str(max_id) + ".jpg"
+    output_path_two = settings.BASE_DIR + "/media/mosaics/output_two" + str(max_id) + ".jpg"
     src = cv2.imread(input_path)
     src_two = cv2.imread(input_path_two)
     img = src.copy()
