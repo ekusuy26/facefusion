@@ -32,14 +32,14 @@ def show(request):
     form = DocumentForm()
     max_id = Document.objects.latest('id').id
     obj = Document.objects.get(id = max_id)
-    input_path = obj.photo.url
-    input_path_two = obj.photo_two.url
+    input_path = settings.BASE_DIR + obj.photo.url
+    input_path_two = settings.BASE_DIR + obj.photo_two.url
     output_path = settings.BASE_DIR + "/media/mosaics/output1.jpg"
     output_path_two = settings.BASE_DIR + "/media/mosaics/output_two1.jpg"
     src = cv2.imread(input_path)
     src_two = cv2.imread(input_path_two)
-    img = cv2.imread(input_path)
-    img_two = cv2.imread(input_path_two)
+    img = src.copy()
+    img_two = src_two.copy()
     def mosaic_area(src, src_two, x, y, width, height, ratio=1):
         dst = src.copy()
         dst_02 = src_two.copy()
@@ -49,8 +49,8 @@ def show(request):
     face_cascade_path = './haarcascade_frontalcatface.xml'
     face_cascade = cv2.CascadeClassifier(face_cascade_path)
     face_cascade_two = cv2.CascadeClassifier(face_cascade_path)
-    src_gray = cv2.cvtColor(src, cv2.COLOR_BGR2GRAY)
-    img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    # src_gray = cv2.cvtColor(src, cv2.COLOR_BGR2GRAY)
+    # img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     # src_two_gray = cv2.cvtColor(src_two, cv2.COLOR_BGR2GRAY)
     # img_two_gray = cv2.cvtColor(img_two, cv2.COLOR_BGR2GRAY)
     # faces = face_cascade.detectMultiScale(src_gray)
