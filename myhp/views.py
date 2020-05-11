@@ -36,8 +36,8 @@ def show(request):
     input_path_two = settings.BASE_DIR + obj.photo_two.url
     output_path = settings.BASE_DIR + "/media/mosaics/output1.jpg"
     output_path_two = settings.BASE_DIR + "/media/mosaics/output_two1.jpg"
-    # src = cv2.imread(input_path)
-    # src_two = cv2.imread(input_path_two)
+    src = cv2.imread(input_path)
+    src_two = cv2.imread(input_path_two)
     # img = src.copy()
     # img_two = src_two.copy()
     # def mosaic_area(src, src_two, x, y, width, height, ratio=1):
