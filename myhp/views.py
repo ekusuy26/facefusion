@@ -40,13 +40,13 @@ def show(request):
     src_two = cv2.imread(input_path_two)
     img = cv2.imread(input_path)
     img_two = cv2.imread(input_path_two)
-    # def mosaic_area(src, src_two, x, y, width, height, ratio=1):
-    #     dst = src.copy()
-    #     dst_02 = src_two.copy()
-    #     dst[y:y + height, x:x + width] = dst_02[y:y + height, x:x + width]
-    #     return dst
+    def mosaic_area(src, src_two, x, y, width, height, ratio=1):
+        dst = src.copy()
+        dst_02 = src_two.copy()
+        dst[y:y + height, x:x + width] = dst_02[y:y + height, x:x + width]
+        return dst
 
-    # face_cascade_path = './haarcascade_frontalcatface.xml'
+    face_cascade_path = './haarcascade_frontalcatface.xml'
     # face_cascade = cv2.CascadeClassifier(face_cascade_path)
     # face_cascade_two = cv2.CascadeClassifier(face_cascade_path)
     # src_gray = cv2.cvtColor(src, cv2.COLOR_BGR2GRAY)
