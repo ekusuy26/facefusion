@@ -2,17 +2,17 @@
 {% block content %}
 <div class="main">
   <div class="uploadImg">
-    <td><img src="../media/{{obj.photo}}" width="200" height="200" /></td>
+    <td><img src="{{obj.photo.url}}" width="200" height="200" /></td>
     <td>　</td>
-    <td><img src="../media/{{obj.photo_two}}" width="200" height="200" /></td>
+    <td><img src="{{obj.photo_two.url}}" width="200" height="200" /></td>
   </div>
   <div class="arrow">
     <i class="fas fa-arrow-circle-down" style="font-size: 60px;"></i>
   </div>
   <div class="resultImg">
-    <td><img src="../media/mosaics/output1.jpg" width="200" height="200" /></td>
+    <!-- <td><img src="../media/mosaics/output1.jpg" width="200" height="200" /></td>
     <td>　</td>
-    <td><img src="../media/mosaics/output_two1.jpg" width="200" height="200" /></td>
+    <td><img src="../media/mosaics/output_two1.jpg" width="200" height="200" /></td> -->
   </div>
 </div>
 {% endblock content %}
