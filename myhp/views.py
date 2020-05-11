@@ -19,10 +19,10 @@ def index(request):
         obj.out_put = "mosaics/output" + str(max_id) + ".jpg"
         obj.out_put_two = "mosaics/output_two" + str(max_id) + ".jpg"
         obj.save()
-        input_path = obj.photo.url
-        input_path_two = obj.photo_two.url
-        output_path = obj.out_put.url
-        output_path_two = obj.out_put_two.url
+        input_path = settings.BASE_DIR + obj.photo.url
+        input_path_two = settings.BASE_DIR + obj.photo_two.url
+        output_path = settings.BASE_DIR + "mosaics/output" + str(max_id) + ".jpg"
+        output_path_two = settings.BASE_DIR + "mosaics/output_two" + str(max_id) + ".jpg"
         src = cv2.imread(input_path)
         src_two = cv2.imread(input_path_two)
         img = src.copy()
