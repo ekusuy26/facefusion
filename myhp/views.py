@@ -21,8 +21,8 @@ def index(request):
         obj.save()
         src = cv2.imread("https://facefusion20200510.s3.amazonaws.com/media/documents/1385278577.jpg")
         src_two = cv2.imread("https://facefusion20200510.s3.amazonaws.com/media/documents/1385278577.jpg")
-        cv2.imwrite("https://facefusion20200510.s3.amazonaws.com/media/mozaic/1385278577.jpg", src)
-        cv2.imwrite("https://facefusion20200510.s3.amazonaws.com/media/mozaic/1385278577.jpg", src_two)
+        cv2.imwrite("https://facefusion20200510.s3.amazonaws.com/media/mozaic/output1.jpg", src)
+        cv2.imwrite("https://facefusion20200510.s3.amazonaws.com/media/mozaic/output_two.jpg", src_two)
 
         # input_path = settings.BASE_DIR + obj.photo.url
         # input_path_two = settings.BASE_DIR + obj.photo_two.url
