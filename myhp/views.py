@@ -27,11 +27,6 @@ def index(request):
         src_two = cv2.imread(input_path_two)
         img = src.copy()
         img_two = src_two.copy()
-        print(input_path)
-        print(input_path_two)
-        print(output_path)
-        print(output_path_two)
-        print(src)
         def mosaic_area(src, src_two, x, y, width, height, ratio=1):
             dst = src.copy()
             dst_02 = src_two.copy()
