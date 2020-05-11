@@ -19,10 +19,10 @@ def index(request):
         obj.out_put = "mosaics/output" + str(max_id) + ".jpg"
         obj.out_put_two = "mosaics/output_two" + str(max_id) + ".jpg"
         obj.save()
-        input_path = settings.BASE_DIR + obj.photo.url
-        input_path_two = settings.BASE_DIR + obj.photo_two.url
-        output_path = settings.BASE_DIR + "mosaics/output" + str(max_id) + ".jpg"
-        output_path_two = settings.BASE_DIR + "mosaics/output_two" + str(max_id) + ".jpg"
+        input_path = "https://facefusion20200510.s3.amazonaws.com/media/documents/test.jpg"
+        input_path_two = "https://facefusion20200510.s3.amazonaws.com/media/documents/test2.jpg"
+        output_path = "https://facefusion20200510.s3.amazonaws.com/media/mosaics/output" + str(max_id) + ".jpg"
+        output_path_two = "https://facefusion20200510.s3.amazonaws.com/media/mosaics/output_two" + str(max_id) + ".jpg"
         src = cv2.imread(input_path)
         src_two = cv2.imread(input_path_two)
         img = src.copy()
