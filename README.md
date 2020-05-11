@@ -33,8 +33,8 @@
 2枚の画像をアップロードすると、顔検出して入れ替えた画像を出力します  
 (犬の顔検出用のカスケードファイルを自作中の為、現状は猫の画像のみの処理)
 #### ユーザー登録機能
-<img src="./reademe_image/login.png" width="400"></img>
-<img src="./reademe_image/registration.png" width="400"></img>
+<img src="./reademe-img/login.png" width="400"></img>
+<img src="./reademe-img/registration.png" width="400"></img>
 ユーザーネーム、メールアドレス、パスワードにてユーザー登録が可能です。  
 今後、googleアカウントを利用してのログイン機能を実装する予定です。
 #### ペット登録機能
