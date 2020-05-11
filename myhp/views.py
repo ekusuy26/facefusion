@@ -23,8 +23,8 @@ def index(request):
         input_path_two = settings.BASE_DIR + obj.photo_two.url
         output_path = settings.BASE_DIR + "/media/mosaics/output" + str(max_id) + ".jpg"
         output_path_two = settings.BASE_DIR + "/media/mosaics/output_two" + str(max_id) + ".jpg"
-        # src = cv2.imread(input_path)
-        # src_two = cv2.imread(input_path_two)
+        src = cv2.imread(obj.photo.url)
+        src_two = cv2.imread(obj.photo_two.url)
         # img = src.copy()
         # img_two = src_two.copy()
         # def mosaic_area(src, src_two, x, y, width, height, ratio=1):
