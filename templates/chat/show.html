@@ -1,10 +1,10 @@
 {% extends './index.html' %}
 {% block chatMessage %}
 <div class="chatMessage">
+  <div class="test">メンバー選択用</div>
   <div class="chatMessageMain">
     {% for chat in chats %}
     <div class="messageBox">
-      <div class="test">メンバー選択用</div>
       {% if chat.user.id == request.user.id %}
       <div class="myComment">
         <p class="myCommentText">
