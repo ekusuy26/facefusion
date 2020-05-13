@@ -9,6 +9,7 @@ from django.conf import settings
 
 s3 = boto3.resource('s3')
 bucket = s3.Bucket('facefusion20200510')
+print (bucket.name)
 print bucket.name
 
 def index(request):
@@ -65,7 +66,7 @@ def index(request):
         form = DocumentForm()
         s3 = boto3.resource('s3')
         bucket = s3.Bucket('facefusion20200510')
-        print bucket.name
+        print (bucket.name)
         # input_path = bucket.download_file('documents/16386660144.jpg', '16386660144.jpg')
         # input_path_two = bucket.download_file('documents/25690386427.jpg', '25690386427.jpg')
     return render(request, 'myhp/index.html', {
