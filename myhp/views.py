@@ -25,6 +25,8 @@ def index(request):
         obj.save()
         input_path = bucket.download_file('documents/16386660144.jpg', '16386660144.jpg')
         input_path_two = bucket.download_file('documents/25690386427.jpg', '25690386427.jpg')
+        print(input_path)
+        print(input_path_two)
         # input_path = settings.BASE_DIR + obj.photo.url
         # input_path_two = settings.BASE_DIR + obj.photo_two.url
         output_path = settings.BASE_DIR + "/media/mosaics/output" + str(max_id) + ".jpg"
