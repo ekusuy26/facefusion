@@ -55,7 +55,7 @@ def index(request):
         
                 cv2.imwrite('./download1.jpg', dst_face_01)
                 cv2.imwrite('./download2.jpg', dst_face_02)
-                bucket.upload_file('download2.jpg', 'media/'+obj.out_put.name)
+                bucket.upload_file('download1.jpg', 'media/'+obj.out_put.name)
                 bucket.upload_file('download2.jpg', 'media/'+obj.out_put_two.name)
         return redirect('upload/')
     else:
