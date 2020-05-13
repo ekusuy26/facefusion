@@ -6,7 +6,10 @@ from .forms import DocumentForm
 from .models import Document
 from PIL import Image
 from django.conf import settings
- 
+
+s3 = boto3.resource('s3')
+bucket = s3.Bucket('facefusion20200510')
+
 def index(request):
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
@@ -20,8 +23,10 @@ def index(request):
         obj.out_put = "mosaics/output" + str(max_id) + ".jpg"
         obj.out_put_two = "mosaics/output_two" + str(max_id) + ".jpg"
         obj.save()
-        input_path = settings.BASE_DIR + obj.photo.url
-        input_path_two = settings.BASE_DIR + obj.photo_two.url
+        input_path = bucket.download_file('documents/16386660144.jpg', '16386660144.jpg')
+        input_path_two = bucket.download_file('documents/25690386427.jpg', '25690386427.jpg')
+        # input_path = settings.BASE_DIR + obj.photo.url
+        # input_path_two = settings.BASE_DIR + obj.photo_two.url
         output_path = settings.BASE_DIR + "/media/mosaics/output" + str(max_id) + ".jpg"
         output_path_two = settings.BASE_DIR + "/media/mosaics/output_two" + str(max_id) + ".jpg"
         src = cv2.imread(input_path)
@@ -50,6 +55,8 @@ def index(request):
         
                 cv2.imwrite(output_path, dst_face_01)
                 cv2.imwrite(output_path_two, dst_face_02)
+                bucket.upload_file(output_path, 'mosaics/16386660144.jpg')
+                bucket.upload_file(output_path_two, 'mosaics/25690386427.jpg')
         return redirect('upload/')
     else:
         form = DocumentForm()
