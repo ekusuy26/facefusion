@@ -53,10 +53,10 @@ def index(request):
                 dst_face_01 = mosaic_area(src, src_two, x, y, w, h)
                 dst_face_02 = mosaic_area(img_two, img, a, b, c, d)
         
-                cv2.imwrite('./download1.jpg', dst_face_01)
-                cv2.imwrite('./download2.jpg', dst_face_02)
-                bucket.upload_file('download1.jpg', 'media/'+obj.out_put.name)
-                bucket.upload_file('download2.jpg', 'media/'+obj.out_put_two.name)
+                cv2.imwrite(output_path, dst_face_01)
+                cv2.imwrite(output_path_two, dst_face_02)
+                # bucket.upload_file('download1.jpg', 'media/'+obj.out_put.name)
+                # bucket.upload_file('download2.jpg', 'media/'+obj.out_put_two.name)
         return redirect('upload/')
     else:
         # s3 = boto3.resource('s3')
