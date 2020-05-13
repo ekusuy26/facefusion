@@ -10,7 +10,6 @@ from django.conf import settings
 s3 = boto3.resource('s3')
 bucket = s3.Bucket('facefusion20200510')
 print (bucket.name)
-print bucket.name
 
 def index(request):
     if request.method == 'POST':
