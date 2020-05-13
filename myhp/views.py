@@ -12,8 +12,8 @@ bucket = s3.Bucket('facefusion20200510')
 print (bucket.name)
 input_path = bucket.download_file('documents/16386660144.jpg', '16386660144.jpg')
 input_path_two = bucket.download_file('documents/25690386427.jpg', '25690386427.jpg')
-print (input_path)
-print (input_path_two)
+# print (input_path)
+# print (input_path_two)
 
 def index(request):
     if request.method == 'POST':
