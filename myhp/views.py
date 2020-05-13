@@ -62,8 +62,13 @@ def index(request):
         return redirect('upload/')
     else:
         form = DocumentForm()
+        input_path = bucket.download_file('documents/16386660144.jpg', '16386660144.jpg')
+        input_path_two = bucket.download_file('documents/25690386427.jpg', '25690386427.jpg')
     return render(request, 'myhp/index.html', {
         'form': form,
+        'input_path': input_path,
+        'input_path_two': input_path_two,
+
     })
 
 def show(request):
