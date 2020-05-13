@@ -57,7 +57,7 @@ def faceFusion():
         test = 1
     img = src.copy()
     img_two = src_two.copy()
-    def mosaic_area(src, src_two, x, y, width, height, ratio=1):
+    def face_swap(src, src_two, x, y, width, height, ratio=1):
         dst = src.copy()
         dst_02 = src_two.copy()
         dst[y:y + height, x:x + width] = dst_02[y:y + height, x:x + width]
@@ -74,8 +74,8 @@ def faceFusion():
     faces_two = face_cascade_two.detectMultiScale(img_two_gray)
     for x, y, w, h in faces:
         for a, b, c, d in faces_two:
-            dst_face_01 = mosaic_area(src, src_two, x, y, w, h)
-            dst_face_02 = mosaic_area(img_two, img, a, b, c, d)
+            dst_face_01 = face_swap(src, src_two, x, y, w, h)
+            dst_face_02 = face_swap(img_two, img, a, b, c, d)
     
             if test == 0:
                 cv2.imwrite('./download1.jpg', dst_face_01)
