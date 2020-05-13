@@ -7,6 +7,9 @@ from .models import Document
 from PIL import Image
 from django.conf import settings
 
+s3 = boto3.resource('s3')
+bucket = s3.Bucket('facefusion20200510')
+
 def index(request):
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
@@ -20,12 +23,14 @@ def index(request):
         obj.out_put = "mosaics/output" + str(max_id) + ".jpg"
         obj.out_put_two = "mosaics/output_two" + str(max_id) + ".jpg"
         obj.save()
+        bucket.download_file('media/'+obj.photo.name, 'download1.jpg')
+        bucket.download_file('media/'+obj.photo_two.name, 'download2.jpg')
         input_path = settings.BASE_DIR + obj.photo.url
         input_path_two = settings.BASE_DIR + obj.photo_two.url
         output_path = settings.BASE_DIR + "/media/mosaics/output" + str(max_id) + ".jpg"
         output_path_two = settings.BASE_DIR + "/media/mosaics/output_two" + str(max_id) + ".jpg"
-        src = cv2.imread(input_path)
-        src_two = cv2.imread(input_path_two)
+        src = cv2.imread('./download1.jpg')
+        src_two = cv2.imread('./download2.jpg')
         img = src.copy()
         img_two = src_two.copy()
         def mosaic_area(src, src_two, x, y, width, height, ratio=1):
@@ -48,15 +53,21 @@ def index(request):
                 dst_face_01 = mosaic_area(src, src_two, x, y, w, h)
                 dst_face_02 = mosaic_area(img_two, img, a, b, c, d)
         
-                cv2.imwrite(output_path, dst_face_01)
-                cv2.imwrite(output_path_two, dst_face_02)
-                bucket.upload_file(output_path, 'mosaics/16386660144.jpg')
-                bucket.upload_file(output_path_two, 'mosaics/25690386427.jpg')
+                cv2.imwrite('./download1.jpg', dst_face_01)
+                cv2.imwrite('./download2.jpg', dst_face_02)
+                bucket.upload_file('./download2.jpg', 'media/'+obj.out_put.name')
+                bucket.upload_file('./download2.jpg', 'media/'+obj.out_put_two.name')
         return redirect('upload/')
     else:
+        # s3 = boto3.resource('s3')
+        
+        # bucket = s3.Bucket('facefusion20200510')
+        # bucket.download_file('media/documents/16386660144.jpg', '16386660144.jpg')
+        # bucket.upload_file('16386660144.jpg', 'media/tests/16386660144.jpg')
         form = DocumentForm()
     return render(request, 'myhp/index.html', {
         'form': form,
+        # 'image': image,
     })
 
 def show(request):
