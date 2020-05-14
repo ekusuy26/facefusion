@@ -44,7 +44,12 @@ h1,h2,h3,h4,h5,h6,p {
 	  transparent 75%, #424242 75%, #424242 75%);
 }
 
-.header-under-right-box{
+.header-under-left-box{
+  padding: 0 20px;
+  align-self: center;
+}
+
+.header-under-right-box {
   padding: 0 20px;
   align-self: center;
 }

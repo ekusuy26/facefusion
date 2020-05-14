@@ -143,7 +143,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 LOGIN_URL = 'login' # ログインしていないときのリダイレクト先
-LOGIN_REDIRECT_URL = '/' # ログイン後のリダイレクト先
+LOGIN_REDIRECT_URL = '/list' # ログイン後のリダイレクト先
 LOGOUT_REDIRECT_URL = 'login' # ログアウト後のリダイレクト
 
 try:
