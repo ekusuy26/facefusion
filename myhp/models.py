@@ -4,7 +4,7 @@ from django.db import models
 class Document(models.Model):
     description = models.CharField(max_length=255, blank=True)
     photo = models.ImageField(upload_to='uploads/', default='defo')
-    photo_two = models.ImageField(upload_to='documents/', default='defo')
+    photo_two = models.ImageField(upload_to='uploads/', default='defo')
     uploaded_at = models.DateTimeField(auto_now_add=True)
     out_put = models.ImageField(upload_to='uploads/', default='defo')
     out_put_two = models.ImageField(upload_to='uploads/', default='defo')
