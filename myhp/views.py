@@ -36,9 +36,9 @@ def show(request):
     })
 
 def list(request):
-    obj = Document.objects.all()
+    objs = Document.objects.all()
     return render(request, 'myhp/list.html', {
-        'obj': obj
+        'objs': objs
     })
 
 def faceFusion():

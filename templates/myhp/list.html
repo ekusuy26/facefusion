@@ -1,6 +1,11 @@
 {% extends '../shared/base.html' %}
 {% block content %}
-  <div class="main">
- 
-  </div>
+<div class="main">
+  {%for obj in objs%}
+  <img src="{{obj.photo.url}}" width="150" height="150" />
+  <img src="{{obj.photo_two.url}}" width="150" height="150" />
+  <img src="{{obj.out_put.url}}" width="150" height="150" />
+  <img src="{{obj.out_put_two.url}}" width="150" height="150" />
+  {% endfor%}
+</div>
 {% endblock content %}
