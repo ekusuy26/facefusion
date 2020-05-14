@@ -36,7 +36,10 @@ def show(request):
     })
 
 def list(request):
-    return render(request, 'myhp/list.html', {})
+    obj = Document.objects.all()
+    return render(request, 'myhp/list.html', {
+        'obj': obj
+    })
 
 def faceFusion():
     max_id = Document.objects.latest('id').id
