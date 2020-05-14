@@ -1,6 +1,10 @@
 {% extends '../shared/base.html' %}
 {% block content %}
 <div class="listMain">
+  <div class="listTextBox">
+    <p class="listText">Posted image</p>
+    <p class="listText">Result image</p>
+  </div>
   {%for obj in objs%}
   <div class="uploadResult">
     <img src="{{obj.photo.url}}" width="150" height="150" />
