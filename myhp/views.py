@@ -80,8 +80,8 @@ def faceFusion():
             if test == 0:
                 cv2.imwrite('./download1.jpg', dst_face_01)
                 cv2.imwrite('./download2.jpg', dst_face_02)
-                bucket.upload_file('download1.jpg', 'media/'+obj.out_put.name)
-                bucket.upload_file('download2.jpg', 'media/'+obj.out_put_two.name)
+                bucket.upload_file('download1.jpg', 'media/'+obj.out_put.name, ExtraArgs={'ACL':'public-read'})
+                bucket.upload_file('download2.jpg', 'media/'+obj.out_put_two.name, ExtraArgs={'ACL':'public-read'})
             else:
                 cv2.imwrite(output_path, dst_face_01)
                 cv2.imwrite(output_path_two, dst_face_02)
