@@ -22,7 +22,14 @@
       </a>
     </div>
     <div class="header-under-box">
-      <div class="header-under-left-box"></div>
+      <div class="header-under-left-box">
+        <a href="{% url 'myhp:list' %}" class="header-link">
+          list
+        </a>
+        <a href="{% url 'myhp:index' %}" class="header-link">
+          top
+        </a>
+      </div>
       <div class="header-under-right-box">
         {% if user.is_authenticated %}
         <a href="{% url 'chat:message' %}" class="header-link">
