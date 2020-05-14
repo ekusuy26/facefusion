@@ -6,4 +6,5 @@ app_name='myhp'
 urlpatterns = [
     path('', views.index, name='index'),
     path('upload/', views.show, name='show'),
+    path('list/', views.list, name='list'),
 ]
