@@ -1,11 +1,11 @@
-import cv2
-import boto3
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import DocumentForm
 from .models import Document
 from PIL import Image
 from django.conf import settings
+import cv2
+import boto3
 
 s3 = boto3.resource('s3')
 bucket = s3.Bucket('facefusion20200510')
