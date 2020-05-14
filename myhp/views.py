@@ -38,8 +38,8 @@ def show(request):
 def faceFusion():
     max_id = Document.objects.latest('id').id
     obj = Document.objects.get(id = max_id)
-    obj.out_put = "mosaics/output" + str(max_id) + ".jpg"
-    obj.out_put_two = "mosaics/output_two" + str(max_id) + ".jpg"
+    obj.out_put = "uploads/output" + str(max_id) + ".jpg"
+    obj.out_put_two = "uploads/output_two" + str(max_id) + ".jpg"
     obj.save()
     try:
         bucket.download_file('media/'+obj.photo.name, 'download1.jpg')
@@ -50,8 +50,8 @@ def faceFusion():
     except:
         input_path = settings.BASE_DIR + obj.photo.url
         input_path_two = settings.BASE_DIR + obj.photo_two.url
-        output_path = settings.BASE_DIR + "/media/mosaics/output" + str(max_id) + ".jpg"
-        output_path_two = settings.BASE_DIR + "/media/mosaics/output_two" + str(max_id) + ".jpg"
+        output_path = settings.BASE_DIR + "/media/uploads/output" + str(max_id) + ".jpg"
+        output_path_two = settings.BASE_DIR + "/media/uploads/output_two" + str(max_id) + ".jpg"
         src = cv2.imread(input_path)
         src_two = cv2.imread(input_path_two)
         test = 1
