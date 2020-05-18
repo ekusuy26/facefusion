@@ -5,7 +5,6 @@
 
 ## 本番環境URL
 * https://facefusion.herokuapp.com
-* デプロイ済みですが、ローカル環境では完成しておりますが本番環境でエラーが出ており修正中です。
 
 ## テストアカウント
 * メールアドレス　test@test.com
