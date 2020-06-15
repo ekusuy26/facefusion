@@ -10,6 +10,10 @@ import boto3
 s3 = boto3.resource('s3')
 bucket = s3.Bucket('facefusion20200510')
 
+def toppage(request):
+    return render(request, 'myhp/toppage.html', {})
+    
+
 def index(request):
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
