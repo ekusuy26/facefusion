@@ -1,1 +1,37 @@
-hogehoge
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <script src="{% static 'js/preview.js' %}"></script>
+  <title>facefusion</title>
+</head>
+
+<body>
+  <div class="" style="background-color: red; height: 80px; padding: 0 50px;">header</div>
+  <div class="" style="background-color: blue; height: 500px; display: flex; padding: 0 50px;">
+    <div class="" style="background-color: yellow; width: 30%;">introduction & login btn</div>
+    <div class="" style="background-color: green; width: 70%;">photo</div>
+  </div>
+  <div class="" style="background-color: purple; height: 500px; padding: 0 50px;">
+    <ul class="" style="display: flex; justify-content: space-around; list-style: none; height: 80%; margin: 0;">
+      <li class="" style="background-color: white;">how to use</li>
+      <li class="" style="background-color: white;">how to use</li>
+      <li class="" style="background-color: white;">how to use</li>
+    </ul>
+  </div>
+  <div class="" style="background-color: coral; height: 500px; padding: 0 50px;">
+    <div class="" style="">user list</div>
+  </div>
+  <div class="" style="background-color: black; color: white;">footer</div>
+
+</body>
+
+</html>
