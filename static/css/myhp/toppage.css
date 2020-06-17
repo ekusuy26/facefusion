@@ -2,11 +2,15 @@
 .toppage-header{
   background-color: #ffffff;
   height: 80px;
-  padding: 0 50px;
   display: flex;
   justify-content: space-between;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, .8);
   margin-bottom: 20px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: calc(100% - 100px);
+  padding: 0 50px;
 }
 
 /* topimage */
@@ -14,6 +18,7 @@
   height: 650px;
   display: flex;
   padding: 0 50px;
+  margin-top: 100px;
 }
 .toppage-introduction-box{
   background-color: #ffffff;
@@ -76,7 +81,6 @@
 
 /* userlist */
 .toppage-user-wrap{
-  height: 500px;
   padding: 0 50px;
 }
 
