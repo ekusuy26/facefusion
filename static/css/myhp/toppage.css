@@ -1,3 +1,4 @@
+/* header */
 .toppage-header{
   background-color: #ffffff;
   height: 80px;
@@ -7,15 +8,40 @@
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, .8);
   margin-bottom: 20px;
 }
+
+/* topimage */
 .toppage-back-ground-image-wrap{
   height: 650px;
   display: flex;
   padding: 0 50px;
 }
 .toppage-introduction-box{
-  background-color: yellow;
+  background-color: #ffffff;
   width: 30%;
+  text-align: center;
+  padding: 30px;
 }
+.toppage-introduction{
+  margin: 50px 0;
+  height: 70%;
+  background-color: red;
+}
+.login-link {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
+  border-radius: 100px;
+  transition: .4s;
+  font-size: larger;
+}
+
+.login-link:hover {
+  background: #67c5ff;
+  color: white;
+}
+
 .toppage-back-ground-image{
   background-image: url("/static/images/top-image.jpg");
   background-color:rgba(255,255,255,0.4);
@@ -23,6 +49,8 @@
   background-size: cover;
   width: 70%;
 }
+
+
 .toppage-how-to-use-wrap{
   background-color: purple;
   height: 500px;
