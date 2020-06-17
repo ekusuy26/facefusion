@@ -65,10 +65,13 @@
   padding: 0;
 }
 .toppage-how-to-use{
-  height: 90%;
+  height: 80%;
   width: 250px;
   background-color: red;
-  margin: 30px 0;
+  margin: 50px 0;
+  opacity : 0;
+  transform: translateY(20px);
+  transition: 1s;
 }
 .toppage-user-wrap{
   background-color: coral;
