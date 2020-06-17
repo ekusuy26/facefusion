@@ -24,7 +24,7 @@
 .toppage-introduction{
   margin: 50px 0;
   height: 70%;
-  background-color: red;
+  border: solid 1px;
 }
 .login-link {
   display: inline-block;
@@ -50,21 +50,25 @@
   width: 70%;
 }
 
-
+/* howToUse */
 .toppage-how-to-use-wrap{
-  background-color: purple;
   height: 500px;
-  padding: 0 50px;
+  padding: 10px 50px;
 }
 .toppage-how-to-use-box{
+  background-color: #ffffff;
   display: flex;
   justify-content: space-around;
   list-style: none;
-  height: 80%;
+  height: 100%;
   margin: 0;
+  padding: 0;
 }
 .toppage-how-to-use{
-  background-color: white;
+  height: 90%;
+  width: 250px;
+  background-color: red;
+  margin: 30px 0;
 }
 .toppage-user-wrap{
   background-color: coral;
