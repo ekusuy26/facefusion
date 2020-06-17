@@ -1,13 +1,14 @@
 .toppage-header{
-  background-color: red;
+  background-color: #ffffff;
   height: 80px;
   padding: 0 50px;
   display: flex;
   justify-content: space-between;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .8);
+  margin-bottom: 20px;
 }
 .toppage-back-ground-image-wrap{
-  background-color: blue;
-  height: 500px;
+  height: 650px;
   display: flex;
   padding: 0 50px;
 }
@@ -16,7 +17,10 @@
   width: 30%;
 }
 .toppage-back-ground-image{
-  background-color: green;
+  background-image: url("/static/images/top-image.jpg");
+  background-color:rgba(255,255,255,0.4);
+  background-blend-mode:lighten;
+  background-size: cover;
   width: 70%;
 }
 .toppage-how-to-use-wrap{
