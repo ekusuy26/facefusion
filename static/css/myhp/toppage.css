@@ -112,6 +112,7 @@
 }
 
 .toppage-top-footer{
-  background-color: black;
-  color: white;
+  background-image: url("/static/images/footer.png");
+  background-size: contain;
+  height: 50px;
 }
