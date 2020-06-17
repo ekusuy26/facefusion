@@ -1,0 +1,45 @@
+.toppage-header{
+  background-color: red;
+  height: 80px;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.toppage-back-ground-image-wrap{
+  background-color: blue;
+  height: 500px;
+  display: flex;
+  padding: 0 50px;
+}
+.toppage-introduction-box{
+  background-color: yellow;
+  width: 30%;
+}
+.toppage-back-ground-image{
+  background-color: green;
+  width: 70%;
+}
+.toppage-how-to-use-wrap{
+  background-color: purple;
+  height: 500px;
+  padding: 0 50px;
+}
+.toppage-how-to-use-box{
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  height: 80%;
+  margin: 0;
+}
+.toppage-how-to-use{
+  background-color: white;
+}
+.toppage-user-wrap{
+  background-color: coral;
+  height: 500px;
+  padding: 0 50px;
+}
+.toppage-top-footer{
+  background-color: black;
+  color: white;
+}
