@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import DocumentForm
 from .models import Document
+from accounts.models import Dog
 from PIL import Image
 from django.conf import settings
 import cv2
@@ -11,8 +12,10 @@ s3 = boto3.resource('s3')
 bucket = s3.Bucket('facefusion20200510')
 
 def toppage(request):
-    return render(request, 'myhp/toppage.html', {})
-    
+    objs = Dog.objects.all()
+    return render(request, 'myhp/toppage.html', {
+        'objs': objs
+    })
 
 def index(request):
     if request.method == 'POST':

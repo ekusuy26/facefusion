@@ -69,26 +69,18 @@
   </div>
   <div class="toppage-user-wrap">
     <div class="toppage-users">
+      {% for obj in objs %}
       <div class="toppage-user">
-        <div class="toppage-user-photo">photo</div>
-        <div class="toppage-user-explanation">intro</div>
+        <img class="toppage-user-photo" src="{{ obj.image.url }}">
+        <div class="toppage-user-explanation">
+          <div class="" style="text-align: center;">なまえ：{{ obj.dogname }}</div>
+          <div class="" style="display: flex; justify-content: space-around;">
+            <div class="">{{ obj.sex }}</div>
+            <div class="">{{ obj.age }}さい</div>
+          </div>
+        </div>
       </div>
-      <div class="toppage-user">
-        <div class="toppage-user-photo">photo</div>
-        <div class="toppage-user-explanation">intro</div>
-      </div>
-      <div class="toppage-user">
-        <div class="toppage-user-photo">photo</div>
-        <div class="toppage-user-explanation">intro</div>
-      </div>
-      <div class="toppage-user">
-        <div class="toppage-user-photo">photo</div>
-        <div class="toppage-user-explanation">intro</div>
-      </div>
-      <div class="toppage-user">
-        <div class="toppage-user-photo">photo</div>
-        <div class="toppage-user-explanation">intro</div>
-      </div>
+      {% endfor %}
     </div>
     <div class="toppage-link-box">
       <a class="login-link" href="{% url 'login' %}" style="height: 30px; margin-top: 15px;">(仮)もっと見る＞＞</a>
