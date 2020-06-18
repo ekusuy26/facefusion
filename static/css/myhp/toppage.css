@@ -80,7 +80,7 @@
   margin: 50px 0;
   opacity : 0;
   transform: translateY(20px);
-  transition: 3s;
+  transition: 2s;
 }
 
 .toppage-how-to-use-photo{
@@ -115,11 +115,25 @@
   padding: 0 50px;
 }
 
+.toppage-user-head{
+  background-color: #ffffff;
+  text-align: center;
+  padding-top: 30px;
+}
+
 .toppage-users{
   background-color: #ffffff;
   display: flex;
   justify-content: space-around;
-  padding-top: 50px;
+  padding: 30px 100px 0;
+}
+
+.toppage-user {
+  transition: all 0.6s ease 0s;
+}
+.toppage-user:hover {
+  cursor: pointer;
+  transform: scale(1.2, 1.2);
 }
 
 .toppage-user-photo{
