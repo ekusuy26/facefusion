@@ -27,16 +27,17 @@
   padding: 0 50px;
   margin-top: 100px;
 }
+
 .toppage-introduction-box{
   background-color: #ffffff;
-  width: 30%;
   text-align: center;
   padding: 30px;
+  width: 30%;
 }
+
 .toppage-introduction{
   margin: 50px 0;
   height: 70%;
-  border: solid 1px;
 }
 .login-link {
   display: inline-block;
@@ -64,7 +65,6 @@
 
 /* howToUse */
 .toppage-how-to-use-wrap{
-  /* height: 500px; */
   padding: 10px 50px;
 }
 .toppage-how-to-use-box{
@@ -91,7 +91,6 @@
 .toppage-how-to-use-text{
   background-color: #ffffff;
   height: 200px;
-  /* padding: 50px 0; */
 }
 
 .how-to-use-headline{
