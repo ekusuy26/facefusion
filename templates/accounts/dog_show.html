@@ -2,14 +2,18 @@
 {% block content %}
 
 <div class="dog-wrap">
-  <div class="dog-details">
-    名前：{{dog.dogname}}<br>
-    年齢：{{dog.age}}<br>
-    性別：{{dog.sex}}<br>
-    紹介文：{{dog.introduction}}<br>
-    飼い主：{{dog.user.username}}<br>
+  <div class="dog-details-box">
+    <div class="dog-show-like-box">ここにいいね数表示</div>
+    <div class="dog-details">
+      名前：{{dog.dogname}}<br>
+      年齢：{{dog.age}}<br>
+      性別：{{dog.sex}}<br>
+      紹介文：{{dog.introduction}}<br>
+      飼い主：{{dog.user.username}}<br>
+    </div>
   </div>
   <img class="dog-show-image" src="{{ dog.image.url }}">
 </div>
+<div class="kari" style="text-align:center;">ここにいいねボタンと合成ボタン</div>
 
 {% endblock content %}

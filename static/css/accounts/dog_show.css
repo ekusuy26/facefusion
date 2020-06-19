@@ -1,8 +1,22 @@
 .dog-wrap{
-  background-color: #ffffff;
   width: 500px;
   margin: 100px auto 20px;
   display: flex;
+}
+
+.dog-details-box{
+  width: calc(100% - 300px);
+}
+
+.dog-show-like-box{
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  height: 30px;
+}
+
+.dog-details{
+  background-color: #ffffff;
+  min-height: 250px;
 }
 
 .dog-show-image{
