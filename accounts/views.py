@@ -47,6 +47,9 @@ def show(request):
     dogs = Dog.objects.filter(user_id = request.user.id)
     return render(request, 'accounts/show.html', {'dogs': dogs})
 
+def dogShow(request, pk):
+    return render(request, 'accounts/dog_show.html', {})
+
 class DogDelete(DeleteView):
     template_name = 'accounts/dog_delete.html'
     model = Dog
