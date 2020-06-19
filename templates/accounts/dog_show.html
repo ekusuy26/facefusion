@@ -1,8 +1,15 @@
 {% extends '../shared/base2.html' %}
 {% block content %}
-<div class="hogehoge" style="height: 200px;">hogehoge</div>
-<div class="hogehoge" style="height: 200px;">hogehoge</div>
-<div class="hogehoge" style="height: 200px;">
-{{dog.dogname}}
+
+<div class="dog-wrap">
+  <div class="dog-details">
+    名前：{{dog.dogname}}<br>
+    年齢：{{dog.age}}<br>
+    性別：{{dog.sex}}<br>
+    紹介文：{{dog.introduction}}<br>
+    飼い主：{{dog.user.username}}<br>
+  </div>
+  <img class="dog-show-image" src="{{ dog.image.url }}">
 </div>
+
 {% endblock content %}

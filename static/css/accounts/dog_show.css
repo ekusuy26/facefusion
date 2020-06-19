@@ -1,0 +1,11 @@
+.dog-wrap{
+  background-color: #ffffff;
+  width: 500px;
+  margin: 100px auto 20px;
+  display: flex;
+}
+
+.dog-show-image{
+  height: 300px;
+  width: 300px;
+}
