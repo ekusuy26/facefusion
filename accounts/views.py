@@ -48,7 +48,8 @@ def show(request):
     return render(request, 'accounts/show.html', {'dogs': dogs})
 
 def dogShow(request, pk):
-    return render(request, 'accounts/dog_show.html', {})
+    dog = Dog.objects.get(id = pk)
+    return render(request, 'accounts/dog_show.html', {'dog': dog})
 
 class DogDelete(DeleteView):
     template_name = 'accounts/dog_delete.html'
