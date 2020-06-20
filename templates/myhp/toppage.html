@@ -75,16 +75,18 @@
     <div class="toppage-user-head">新着のお相手</div>
     <div class="toppage-users">
       {% for obj in objs %}
-      <div class="toppage-user">
-        <img class="toppage-user-photo" src="{{ obj.image.url }}">
-        <div class="toppage-user-explanation">
-          <div class="" style="text-align: center;">なまえ：{{ obj.dogname }}</div>
-          <div class="" style="display: flex; justify-content: space-around;">
-            <div class="">{{ obj.sex }}</div>
-            <div class="">{{ obj.age }}さい</div>
+      <a href="{% url 'dogShow' pk=id %}">
+        <div class="toppage-user">
+          <img class="toppage-user-photo" src="{{ obj.image.url }}">
+          <div class="toppage-user-explanation">
+            <div class="" style="text-align: center;">なまえ：{{ obj.dogname }}</div>
+            <div class="" style="display: flex; justify-content: space-around;">
+              <div class="">{{ obj.sex }}</div>
+              <div class="">{{ obj.age }}さい</div>
+            </div>
           </div>
         </div>
-      </div>
+      </a>
       {% endfor %}
     </div>
     <div class="toppage-link-box">
