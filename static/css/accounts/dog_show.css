@@ -12,14 +12,30 @@
   background-color: #ffffff;
   margin-bottom: 20px;
   height: 30px;
+  padding: 15px;
+  line-height: 30px;
 }
 
 .dog-details{
   background-color: #ffffff;
-  min-height: 250px;
+  min-height: 300px;
+  padding: 15px;
+}
+
+.picture-frame{
+  height: 300px;
+  width: 300px;
+  background-color: rgba(128,128,128,0.5);
+  position: relative;
 }
 
 .dog-show-image{
-  height: 300px;
-  width: 300px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 280px;
+  width: 280px;
 }
