@@ -29,7 +29,7 @@ def index(request):
         return redirect('upload/')
     else:
         form = DocumentForm()
-    return render(request, 'myhp/index.html', {
+    return render(request, 'myhp/synthesis.html', {
         'form': form,
     })
 

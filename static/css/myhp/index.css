@@ -69,7 +69,7 @@ h1,h2,h3,h4,h5,h6,p {
 
 .main{
   background-color: #ffffff;
-  margin: 0 auto;
+  margin: 100px auto 10px;
   width: 500px;
   min-height: 100%;
   text-align: center;
