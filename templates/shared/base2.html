@@ -17,7 +17,9 @@
 
 <body>
   <div class="toppage-header">
-    <div class="toppage-logo"></div>
+    <a href="{% url 'myhp:toppage' %}">
+      <div class="toppage-logo"></div>
+    </a>
     <a class="login-link" href="{% url 'login' %}" style="height: 30px; margin-top: 20px;">ログインする</a>
   </div>
   {% block content %}
