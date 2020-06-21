@@ -12,8 +12,10 @@ s3 = boto3.resource('s3')
 bucket = s3.Bucket('facefusion20200510')
 
 def toppage(request):
-    objs = Dog.objects.order_by('-id')[:5]
+    dogs = Dog.objects.order_by('-id')
+    objs = dogs[:5]
     return render(request, 'myhp/toppage.html', {
+        'dogs': dogs,
         'objs': objs
     })
 
