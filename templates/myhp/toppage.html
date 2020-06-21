@@ -75,7 +75,7 @@
     <div class="toppage-user-head">新着のお相手</div>
     <div class="toppage-users">
       {% for obj in objs %}
-      <a href="{% url 'dogShow' pk=id %}">
+      <a href="{% url 'dogshow' pk=obj.id %}" class="toppage-user-link">
         <div class="toppage-user">
           <img class="toppage-user-photo" src="{{ obj.image.url }}">
           <div class="toppage-user-explanation">

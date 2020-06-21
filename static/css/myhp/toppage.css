@@ -127,6 +127,11 @@
   padding: 30px 100px 0;
 }
 
+.toppage-user-link{
+  text-decoration: none;
+  color: #000000;
+}
+
 .toppage-user {
   transition: all 0.6s ease 0s;
 }
