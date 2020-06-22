@@ -19,7 +19,7 @@ def toppage(request):
         'objs': objs
     })
 
-def index(request):
+def index(request, pk):
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
@@ -31,8 +31,10 @@ def index(request):
         return redirect('upload/')
     else:
         form = DocumentForm()
+        dog = Dog.objects.get(id = pk)
     return render(request, 'myhp/synthesis.html', {
         'form': form,
+        'dog': dog,
     })
 
 def show(request):
