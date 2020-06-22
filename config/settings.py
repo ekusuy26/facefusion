@@ -144,7 +144,7 @@ MEDIA_URL = '/media/'
 
 LOGIN_URL = 'login' # ログインしていないときのリダイレクト先
 LOGIN_REDIRECT_URL = '/' # ログイン後のリダイレクト先
-LOGOUT_REDIRECT_URL = 'login' # ログアウト後のリダイレクト
+LOGOUT_REDIRECT_URL = '/' # ログアウト後のリダイレクト
 
 try:
     from .local_settings import *
