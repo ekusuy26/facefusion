@@ -4,8 +4,19 @@
 {% if user.is_authenticated %}
 <div class="top-login-wrap">
   <div class="top-login-left">
-    {{user.username}}さんのマイページ
-    {{user.dog.dogname}}
+    <div class="">
+      {{user.username}}さん
+    </div>
+    <img class="toppage-user-photo" src="{{ user.dog.image.url }}" style="height: 100px; width: 100px;">
+    <div class="" style="text-align: center;">なまえ：{{ user.dog.dogname }}</div>
+    <div class="" style="display: flex; justify-content: space-around;">
+      <div class="">{{ user.dog.sex }}</div>
+      <div class="">{{ user.dog.age }}さい</div>
+    </div>
+    <!-- <a href="{% url 'dog' %}" class="">
+      <i class="fas fa-paw"></i>
+      犬を登録
+    </a> -->
   </div>
   <div class="top-login-right">
     <div class="top-login-users">
