@@ -10,7 +10,7 @@
     {% if dog_flg == 0 %}
     <a href="{% url 'dog' %}" class="">
       <i class="fas fa-paw"></i>
-      犬を登録
+      犬を登録してください
     </a>
     {% else %}
     <img class="toppage-user-photo" src="{{ user.dog.image.url }}" style="height: 100px; width: 100px;">
@@ -18,6 +18,16 @@
     <div class="" style="display: flex; justify-content: space-around;">
       <div class="">{{ user.dog.sex }}</div>
       <div class="">{{ user.dog.age }}さい</div>
+    </div>
+    <div class="">
+      <a href="{% url 'update' pk=user.dog.id %}" class="">
+        <i class="fas fa-edit"></i>編集する
+      </a>
+    </div>
+    <div class="">
+      <a href="{% url 'delete' pk=user.dog.id %}" class="">
+        <i class="fas fa-trash-alt"></i>削除する
+      </a>
     </div>
     {% endif %}
   </div>
