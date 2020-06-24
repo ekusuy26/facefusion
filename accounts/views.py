@@ -49,7 +49,15 @@ def show(request):
 
 def dogShow(request, pk):
     dog = Dog.objects.get(id = pk)
-    return render(request, 'accounts/dog_show.html', {'dog': dog})
+    query = Like.objects.filter(user_id=request.user.id, dog_id=pk)
+    if query.count() == 0:
+        like_flg = 0
+    else:
+        like_flg = 1
+    return render(request, 'accounts/dog_show.html', {
+        'dog': dog,
+        'like_flg': like_flg,
+        })
 
 class DogDelete(DeleteView):
     template_name = 'accounts/dog_delete.html'

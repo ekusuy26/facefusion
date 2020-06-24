@@ -20,7 +20,11 @@
     <div class="picture-frame">
       <img class="dog-show-image" src="{{ dog.image.url }}">
     </div>
+    {% if like_flg == 0 %}
     <a href="{% url 'like' pk=dog.id %}" class="dog-show-link">いいねボタン</a>
+    {% else %}
+    <a href="{% url 'like' pk=dog.id %}" class="dog-show-link">いいねを外す</a>
+    {% endif %}
     <a href="{% url 'myhp:index' pk=dog.id %}" class="dog-show-link">合成ボタン</a>
   </div>
 </div>
