@@ -64,9 +64,13 @@ class DogUpdate(UpdateView):
 
 def like(request, pk):
     query = Like.objects.filter(user_id=request.user.id, dog_id=pk)
-    # 0の場合はいいねしてない」のでいいね処理。それ以外はもういいねしてるのでいいねをはずす処理
     if query.count() == 0:
         # いいねする処理
+        likes_tbl = Like()
+        likes_tbl.user_id = request.user.id
+        likes_tbl.dog_id = pk
+        likes_tbl.save()
     else:
         # いいね外す処理
+        query.delete()
     return redirect('/')
