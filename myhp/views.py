@@ -14,9 +14,15 @@ bucket = s3.Bucket('facefusion20200510')
 def toppage(request):
     dogs = Dog.objects.order_by('-id')
     objs = dogs[:5]
+    dog = Dog.objects.filter(user_id=request.user.id)
+    if dog.count() == 0:
+        dog_flg = 0
+    else:
+        dog_flg = 1
     return render(request, 'myhp/toppage.html', {
         'dogs': dogs,
-        'objs': objs
+        'objs': objs,
+        'dog_flg': dog_flg,
     })
 
 def index(request, pk):
