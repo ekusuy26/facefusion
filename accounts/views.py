@@ -70,7 +70,13 @@ def like(request, pk):
         likes_tbl.user_id = request.user.id
         likes_tbl.dog_id = pk
         likes_tbl.save()
+        dog = Dog.objects.get(id = pk)
+        dog.like_num += 1
+        dog.save()
     else:
         # いいね外す処理
         query.delete()
+        dog = Dog.objects.get(id = pk)
+        dog.like_num -= 1
+        dog.save()
     return redirect('/')
