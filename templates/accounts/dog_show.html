@@ -5,7 +5,7 @@
   <div class="dog-details-box">
     <div class="dog-show-like-box">
       <i class="fas fa-thumbs-up"></i>
-      ???(仮)
+      {{dog.like_num}}
       いいね！
     </div>
     <div class="dog-details">
@@ -20,7 +20,7 @@
     <div class="picture-frame">
       <img class="dog-show-image" src="{{ dog.image.url }}">
     </div>
-    <a href="#" class="dog-show-link">いいねボタン</a>
+    <a href="{% url 'like' pk=dog.id %}" class="dog-show-link">いいねボタン</a>
     <a href="{% url 'myhp:index' pk=dog.id %}" class="dog-show-link">合成ボタン</a>
   </div>
 </div>

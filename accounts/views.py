@@ -61,3 +61,6 @@ class DogUpdate(UpdateView):
     model = Dog
     fields = ['image', 'dogname', 'age', 'sex', 'introduction']
     success_url = reverse_lazy('show')
+
+def like(request, pk):
+    return redirect('/')
