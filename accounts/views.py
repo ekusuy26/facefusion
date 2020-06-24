@@ -7,7 +7,7 @@ from django.urls import reverse_lazy, reverse
 from . import forms
 from .forms import DogForm
 from django.http import HttpResponse
-from .models import Dog
+from .models import Dog, Like
 
 class MyLoginView(LoginView):
     form_class = forms.LoginForm
@@ -63,4 +63,10 @@ class DogUpdate(UpdateView):
     success_url = reverse_lazy('show')
 
 def like(request, pk):
+    query = Like.objects.filter(user_id=request.user.id, dog_id=pk)
+    # 0の場合はいいねしてない」のでいいね処理。それ以外はもういいねしてるのでいいねをはずす処理
+    if query.count() == 0:
+        # いいねする処理
+    else:
+        # いいね外す処理
     return redirect('/')
