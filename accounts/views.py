@@ -33,7 +33,7 @@ def regist(request):
         if form.is_valid():
             print('dog_regist is_valid')
             form.save(request.POST)
-            return redirect('show')
+            return redirect('myhp:toppage')
         else:
             print('dog_regist false is_valid')
 
@@ -62,13 +62,13 @@ def dogShow(request, pk):
 class DogDelete(DeleteView):
     template_name = 'accounts/dog_delete.html'
     model = Dog
-    success_url = reverse_lazy('show')
+    success_url = reverse_lazy('myhp:toppage')
 
 class DogUpdate(UpdateView):
     template_name = 'accounts/dog.html'
     model = Dog
     fields = ['image', 'dogname', 'age', 'sex', 'introduction']
-    success_url = reverse_lazy('show')
+    success_url = reverse_lazy('myhp:toppage')
 
 def like(request, pk):
     query = Like.objects.filter(user_id=request.user.id, dog_id=pk)
