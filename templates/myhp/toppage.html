@@ -3,7 +3,10 @@
 
 {% if user.is_authenticated %}
 <div class="top-login-wrap">
-  <div class="top-login-left"></div>
+  <div class="top-login-left">
+    {{user.username}}さんのマイページ
+    {{user.dog.dogname}}
+  </div>
   <div class="top-login-right">
     <div class="top-login-users">
       {% for dog in dogs %}
