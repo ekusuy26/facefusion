@@ -88,3 +88,17 @@ def like(request, pk):
         dog.like_num -= 1
         dog.save()
     return redirect('/dog/' + str(pk))
+
+# いいねした相手
+def likedPerson(request):
+    # 失敗
+    dog = Dog.objects.get(user_id=request.user.id)
+    dogs = Like.objects.filter(dog_id=dog.id)
+    return render(request, 'myhp/toppage.html', {
+        'dogs': dogs,
+    })
+
+# いいねされた相手
+def likedOpponent(request):
+    return render(request, 'myhp/toppage.html', {
+    })
