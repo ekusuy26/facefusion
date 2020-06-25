@@ -91,7 +91,7 @@ def like(request, pk):
 
 # いいねした相手
 def likedPerson(request):
-    # 失敗
+    # 失敗 データは取り出せているが表示方法がtoppageと違う
     dog = Dog.objects.get(user_id=request.user.id)
     dogs = Like.objects.filter(dog_id=dog.id)
     return render(request, 'myhp/toppage.html', {
