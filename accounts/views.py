@@ -87,4 +87,4 @@ def like(request, pk):
         dog = Dog.objects.get(id = pk)
         dog.like_num -= 1
         dog.save()
-    return redirect('/')
+    return redirect('/dog/' + str(pk))
