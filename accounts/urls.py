@@ -12,4 +12,6 @@ urlpatterns = [
     path('<int:pk>/update/', views.DogUpdate.as_view(), name='update'),
     path('dog/<int:pk>/', views.dogShow, name='dogshow'),
     path('like/<int:pk>/', views.like, name='like'),
+    path('likedperson/', views.likedPerson, name='likedPerson'),
+    path('likedopponent/', views.likedOpponent, name='likedOpponent'),
 ]

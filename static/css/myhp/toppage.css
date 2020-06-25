@@ -172,9 +172,19 @@
 }
 .top-login-left{
   width: 20%;
-  background-color: #ffffff;
   margin-right: 10px;
 }
+
+.top-login-left__dog-box{
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.top-login-left__like-box{
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+
 .top-login-right{
   width: 80%;
 }
