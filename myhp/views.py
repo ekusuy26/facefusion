@@ -19,7 +19,7 @@ def toppage(request):
         dog_flg = 0
     else:
         dog_flg = 1
-    return render(request, 'myhp/toppage.html', {
+    return render(request, 'myhp/index.html', {
         'dogs': dogs,
         'objs': objs,
         'dog_flg': dog_flg,
