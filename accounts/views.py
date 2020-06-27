@@ -100,8 +100,7 @@ def likedPerson(request):
 
 # いいねされた相手
 def likedOpponent(request):
-    dog = Dog.objects.get(user_id=request.user.id)
-    dogs = Like.objects.filter(dog_id=dog.id)
+    dogs = Like.objects.filter(dog_id=request.user.dog.id)
     headLine = 'あいてからのいいね！'
     return render(request, 'myhp/like.html', {
         'dogs': dogs,

@@ -4,16 +4,15 @@
 <div class="">
   {{headLine}}
 </div>
-{{a}}
 <div class="top-login-users">
   <div class="">
     {% for dog in dogs %}
-    {{dog.id}}
-    {{dog.dog.dogname}}
-    {{dog.dog.age}}
-    {{dog.dog.sex}}
-    {{dog.dog.introduction}}
-    {{dog.dog.image}}
+    <img class="toppage-user-photo" src="{{ dog.user.dog.image.url }}">
+    なまえ：{{dog.user.dog.dogname}}
+    {{dog.user.dog.age}}さい
+    性別：{{dog.user.dog.sex}}
+    紹介文：{{dog.user.dog.introduction}}
+    <a href="{% url 'like' pk=dog.id %}" class="dog-show-link">いいねありがとうボタン</a>
     {% endfor %}
   </div>
 </div>
