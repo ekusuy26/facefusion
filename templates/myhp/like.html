@@ -1,16 +1,22 @@
 {% extends './toppage.html' %}
 {% block index %}
 
+<div class="">
+  {{headLine}}
+</div>
+{{a}}
+<div class="top-login-users">
   <div class="">
+    {% for dog in dogs %}
+    {{dog.id}}
+    {{dog.dog.dogname}}
+    {{dog.dog.age}}
+    {{dog.dog.sex}}
+    {{dog.dog.introduction}}
+    {{dog.dog.image}}
+    {% endfor %}
   </div>
-  <div class="top-login-users">
-    <div class="">あああ</div>
-    <div class="">あああ</div>
-    <div class="">あああ</div>
-    <div class="">あああ</div>
-    <div class="">あああ</div>
-    <div class="">あああ</div>
-    <div class="">あああoooooooooooooooooooooo</div>
-  </div>
+</div>
+
 
 {% endblock index %}

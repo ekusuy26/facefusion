@@ -91,14 +91,19 @@ def like(request, pk):
 
 # いいねした相手
 def likedPerson(request):
-    # 失敗 データは取り出せているが表示方法がtoppageと違う
-    dog = Dog.objects.get(user_id=request.user.id)
-    dogs = Like.objects.filter(dog_id=dog.id)
+    dogs = Like.objects.filter(user_id=request.user.id)
+    headLine = 'あなたからのいいね！'
     return render(request, 'myhp/like.html', {
         'dogs': dogs,
+        'headLine': headLine,
     })
 
 # いいねされた相手
 def likedOpponent(request):
+    dog = Dog.objects.get(user_id=request.user.id)
+    dogs = Like.objects.filter(dog_id=dog.id)
+    headLine = 'あいてからのいいね！'
     return render(request, 'myhp/like.html', {
+        'dogs': dogs,
+        'headLine': headLine,
     })
