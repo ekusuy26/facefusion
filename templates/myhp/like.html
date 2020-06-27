@@ -1,7 +1,7 @@
 {% extends './toppage.html' %}
 {% block index %}
 
-<div class="">
+<div class="headLine">
   {{headLine}}
 </div>
 <div class="top-login-users">
@@ -11,16 +11,16 @@
       <div class="like-box-nav">
         <img class="like-image" src="{{ dog.user.dog.image.url }}">
         <div class="like-text">
-          {{dog.user.username}}さん
-          なまえ：{{dog.user.dog.dogname}}
-          {{dog.user.dog.age}}さい
-          性別：{{dog.user.dog.sex}}
-          紹介文：{{dog.user.dog.introduction}}
+          {{dog.user.username}}さん<br>
+          なまえ：{{dog.user.dog.dogname}}<br>
+          {{dog.user.dog.age}}さい<br>
+          性別：{{dog.user.dog.sex}}<br>
+          紹介文：{{dog.user.dog.introduction}}<br>
         </div>
-        <a href="{% url 'like' pk=dog.user_id %}" class="dog-show-link">いいねありがとうボタン</a>
       </div>
-      {% endfor %}
+      <a href="{% url 'like' pk=dog.user_id %}" class="dog-show-link">いいねありがとうボタン</a>
     </div>
+    {% endfor %}
   </div>
 </div>
 
