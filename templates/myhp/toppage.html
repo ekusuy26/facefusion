@@ -1,4 +1,4 @@
-{% extends '../shared/base2.html' %}
+{% extends '../shared/base.html' %}
 {% block content %}
 
 {% if user.is_authenticated %}
@@ -33,8 +33,14 @@
       {% endif %}
     </div>
     <div class="top-login-left__like-box">
-      <div class="">いいねした相手を表示</div>
-      <div class="">いいねしてくれた相手を表示</div>
+      <div class="">あいてからのいいね！</div>
+      <div class="">じぶんからのいいね！</div>
+      <div class="">メッセージを表示
+        <a href="{% url 'chat:message' %}" class="">
+          <i class="fas fa-comments"></i>
+          Message
+        </a>
+      </div>
     </div>
   </div>
   <div class="top-login-right">
