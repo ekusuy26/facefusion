@@ -5,7 +5,11 @@
     {% for crew in crews %}
     <div class="crewLinkBox">
       <a href="{% url 'chat:show' id=crew.id %}" class="crewLink">
-        {{ crew.name }}
+        {% for c in crew.users.all %}
+        {% if c.id != request.user.id %}
+        {{c}}
+        {% endif %}
+        {% endfor %}
       </a>
     </div>
     {% endfor%}

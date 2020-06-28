@@ -11,7 +11,9 @@ from django.urls import reverse_lazy
 # Create your views here.
 def index(request):
     crews = Crew.objects.filter(users=request.user.id)
-    return render(request, 'chat/index.html', {'crews' : crews})
+    return render(request, 'chat/index.html', {
+        'crews' : crews
+        })
 
 def show(request, id):
     if request.method == 'GET':
