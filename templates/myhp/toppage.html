@@ -32,23 +32,20 @@
       </div>
       {% endif %}
     </div>
-    <div class="top-login-left__like-box">
-      <div class="">
-        <a href="{% url 'likedOpponent' %}" class="">
-          あいてからのいいね！
-        </a>
-      </div>
-      <div class="">
-        <a href="{% url 'likedPerson' %}" class="">
-          じぶんからのいいね！
-        </a>
-      </div>
-      <div class="">メッセージを表示
-        <a href="{% url 'chat:message' %}" class="">
-          <i class="fas fa-comments"></i>
-          Message
-        </a>
-      </div>
+    <div class="top-login-left__nav-box">
+      <div class="top-login-left__nav-head"><i class="fas fa-thumbs-up"></i>いいね！</div>
+      <a href="{% url 'likedOpponent' %}" class="top-login__nav-link">
+        あいてからのいいね！
+      </a>
+      <a href="{% url 'likedPerson' %}" class="top-login__nav-link">
+        じぶんからのいいね！
+      </a>
+    </div>
+    <div class="top-login-left__nav-box">
+      <div class="top-login-left__nav-head"><i class="fas fa-comments"></i>マッチング</div>
+      <a href="{% url 'chat:message' %}" class="top-login__nav-link">
+        メッセージ
+      </a>
     </div>
   </div>
   <div class="top-login-right">
