@@ -7,7 +7,8 @@
       <a href="{% url 'chat:show' id=crew.id %}" class="crewLink">
         {% for c in crew.users.all %}
         {% if c.id != request.user.id %}
-        {{c}}
+        <img class="toppage-user-photo" src="{{ c.dog.image.url }}" style="height: 60px; width: 60px;">
+        <p class="chatUsername">{{c}}</p>
         {% endif %}
         {% endfor %}
       </a>
