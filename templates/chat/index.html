@@ -2,9 +2,6 @@
 {% block index %}
 <div class="chatWrap">
   <div class="chatGroup">
-    <a href="{% url 'chat:new' %}" class="createGroupLink">
-      　 create group
-      </a>
     {% for crew in crews %}
     <div class="crewLinkBox">
       <a href="{% url 'chat:show' id=crew.id %}" class="crewLink">

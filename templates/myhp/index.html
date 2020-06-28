@@ -1,9 +1,6 @@
 {% extends './toppage.html' %}
 {% block index %}
 
-  <div class="">
-    (memo)これは登録したユーザー一覧index
-  </div>
   <div class="top-login-users">
     {% for dog in dogs %}
     <a href="{% url 'dogshow' pk=dog.id %}" class="toppage-user-link">

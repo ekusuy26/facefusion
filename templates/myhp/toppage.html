@@ -20,13 +20,11 @@
         <div class="">{{ user.dog.sex }}</div>
         <div class="">{{ user.dog.age }}さい</div>
       </div>
-      <div class="">
-        <a href="{% url 'update' pk=user.dog.id %}" class="">
+      <div class="dog-edit-wrap">
+        <a href="{% url 'update' pk=user.dog.id %}" class="top-login__nav-link">
           <i class="fas fa-edit"></i>編集する
         </a>
-      </div>
-      <div class="">
-        <a href="{% url 'delete' pk=user.dog.id %}" class="">
+        <a href="{% url 'delete' pk=user.dog.id %}" class="top-login__nav-link">
           <i class="fas fa-trash-alt"></i>削除する
         </a>
       </div>
@@ -49,6 +47,9 @@
     </div>
   </div>
   <div class="top-login-right">
+    <div class="headLine">
+      {{headLine}}
+    </div>
     {% block index %}
     <!-- content -->
     {% endblock %}

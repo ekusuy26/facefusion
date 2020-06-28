@@ -19,10 +19,12 @@ def toppage(request):
         dog_flg = 0
     else:
         dog_flg = 1
+    headLine = 'ユーザー一覧'
     return render(request, 'myhp/index.html', {
         'dogs': dogs,
         'objs': objs,
         'dog_flg': dog_flg,
+        'headLine': headLine,
     })
 
 def index(request, pk):
