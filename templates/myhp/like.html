@@ -6,19 +6,22 @@
 </div>
 <div class="top-login-users">
   <div class="like-wrap">
-    {% for dog in dogs %}
+    {% for like in likes %}
+    <!-- 部分テンプレート化が必要 -->
     <div class="like-box">
       <div class="like-box-nav">
-        <img class="like-image" src="{{ dog.user.dog.image.url }}">
+        <img class="like-image" src="{{ like.dog.image.url }}">
         <div class="like-text">
-          {{dog.user.username}}さん<br>
-          なまえ：{{dog.user.dog.dogname}}<br>
-          {{dog.user.dog.age}}さい<br>
-          性別：{{dog.user.dog.sex}}<br>
-          紹介文：{{dog.user.dog.introduction}}<br>
+          {{like.dog.user.username}}さん<br>
+          なまえ：{{like.dog.dogname}}<br>
+          {{like.dog.age}}さい<br>
+          性別：{{like.dog.sex}}<br>
+          紹介文：{{like.dog.introduction}}<br>
         </div>
       </div>
-      <a href="{% url 'like' pk=dog.user_id %}" class="dog-show-link">いいねありがとうボタン</a>
+      {% block like %}
+      <!-- like -->
+      {% endblock %}
     </div>
     {% endfor %}
   </div>

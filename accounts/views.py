@@ -91,18 +91,18 @@ def like(request, pk):
 
 # いいねした相手
 def likedPerson(request):
-    dogs = Like.objects.filter(user_id=request.user.id)
+    likes = Like.objects.filter(user_id=request.user.id)
     headLine = 'あなたからのいいね！'
-    return render(request, 'myhp/like.html', {
-        'dogs': dogs,
+    return render(request, 'myhp/liked_person.html', {
+        'likes': likes,
         'headLine': headLine,
     })
 
 # いいねされた相手
 def likedOpponent(request):
-    dogs = Like.objects.filter(dog_id=request.user.dog.id)
+    likes = Like.objects.filter(dog_id=request.user.dog.id)
     headLine = 'あいてからのいいね！'
-    return render(request, 'myhp/like.html', {
-        'dogs': dogs,
+    return render(request, 'myhp/liked_opponent.html', {
+        'likes': likes,
         'headLine': headLine,
     })

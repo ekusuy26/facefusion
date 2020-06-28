@@ -1,0 +1,6 @@
+{% extends './like.html' %}
+{% block like %}
+
+<a href="{% url 'like' pk=like.user_id %}" class="dog-show-link">いいねありがとうボタン</a>
+
+{% endblock like %}
