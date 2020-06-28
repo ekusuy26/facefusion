@@ -7,7 +7,7 @@ from django.urls import reverse_lazy, reverse
 from . import forms
 from .forms import DogForm
 from django.http import HttpResponse
-from .models import Dog, Like
+from .models import Dog, Like, Crew
 
 class MyLoginView(LoginView):
     form_class = forms.LoginForm
@@ -85,7 +85,12 @@ def like(request, pk):
         opponent_id = Dog.objects.get(id=pk).user.id
         check = Like.objects.filter(user_id=opponent_id, dog_id=request.user.dog.id)
         if check.count() == query.count():
-            test = 1
+            crews_tbl = Crew()
+            crews_tbl.name = '仮'
+            crews_tbl.save()
+            new_crew = Crew.objects.latest('id')
+            new_crew.users.add(request.user)
+            new_crew.users.add(opponent_id)
             # このタイミングでグループクリエイト
     else:
         # いいね外す処理
