@@ -81,6 +81,12 @@ def like(request, pk):
         dog = Dog.objects.get(id = pk)
         dog.like_num += 1
         dog.save()
+        # 相手がログインユーザーをいいねしているか確認
+        opponent_id = Dog.objects.get(id=pk).user.id
+        check = Like.objects.filter(user_id=opponent_id, dog_id=request.user.dog.id)
+        if check.count() == query.count():
+            test = 1
+            # このタイミングでグループクリエイト
     else:
         # いいね外す処理
         query.delete()
