@@ -1,5 +1,5 @@
-{% extends '../shared/base.html' %}
-{% block content %}
+{% extends '../myhp/toppage.html' %}
+{% block index %}
 <div class="chatWrap">
   <div class="chatGroup">
     <a href="{% url 'chat:new' %}" class="createGroupLink">
@@ -18,7 +18,6 @@
     <div class="chatLogo">
     </div>
   </div>
-  <!-- content -->
   {% endblock %}
 </div>
-{% endblock content %}
+{% endblock index %}
