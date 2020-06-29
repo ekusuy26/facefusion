@@ -275,6 +275,7 @@ h1,h2,h3,h4,h5,h6,p {
   line-height: 100%;
   padding: 1rem 0;
   overflow: scroll;
+  border-right: solid 1px #f0f0f0;
 }
 
 .createGroupBox{
