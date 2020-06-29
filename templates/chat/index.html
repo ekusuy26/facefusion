@@ -3,6 +3,7 @@
 <div class="chatWrap">
   <div class="chatGroup">
     {% for crew in crews %}
+    {{crew.chat}}
     <div class="crewLinkBox">
       <a href="{% url 'chat:show' id=crew.id %}" class="crewLink">
         {% for c in crew.users.all %}

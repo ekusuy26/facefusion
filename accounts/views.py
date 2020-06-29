@@ -103,7 +103,7 @@ def like(request, pk):
 # いいねした相手
 def likedPerson(request):
     likes = Like.objects.filter(user_id=request.user.id)
-    headLine = 'あなたからのいいね！'
+    headLine = 'じぶんからのいいね！'
     return render(request, 'myhp/liked_person.html', {
         'likes': likes,
         'headLine': headLine,
