@@ -86,7 +86,7 @@ def like(request, pk):
         check = Like.objects.filter(user_id=opponent_id, dog_id=request.user.dog.id)
         if check.count() == query.count():
             crews_tbl = Crew()
-            crews_tbl.name = '仮' + str(request.user.id)
+            crews_tbl.name = 'group' + str(request.user.id)
             crews_tbl.save()
             new_crew = Crew.objects.latest('id')
             new_crew.users.add(request.user)
