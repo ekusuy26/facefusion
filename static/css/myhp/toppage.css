@@ -111,7 +111,7 @@
 
 /* userlist */
 .toppage-user-wrap{
-  padding: 0 50px;
+  padding: 0 50px 10px;
 }
 
 .toppage-user-head{
@@ -124,7 +124,7 @@
   background-color: #fafafa;
   display: flex;
   justify-content: space-around;
-  padding: 30px 100px 0;
+  padding: 30px 100px;
 }
 
 .toppage-user-link{
