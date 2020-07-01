@@ -27,7 +27,7 @@ def toppage(request):
         'headLine': headLine,
     })
 
-def index(request, pk):
+def index(request):
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
@@ -36,13 +36,11 @@ def index(request, pk):
         else:
             print('documents false is_valid')
         faceFusion()
-        return redirect('upload/')
+        return redirect('/upload/')
     else:
         form = DocumentForm()
-        dog = Dog.objects.get(id = pk)
     return render(request, 'myhp/synthesis.html', {
         'form': form,
-        'dog': dog,
     })
 
 def show(request):
