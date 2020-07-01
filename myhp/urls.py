@@ -6,6 +6,6 @@ app_name='myhp'
 urlpatterns = [
     path('synthesis/<int:pk>/', views.index, name='index'),
     path('upload/', views.show, name='show'),
-    path('list/', views.list, name='list'),
+    path('result/', views.result, name='result'),
     path('', views.toppage, name='toppage'),
 ]

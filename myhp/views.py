@@ -54,9 +54,9 @@ def show(request):
         'obj': obj
     })
 
-def list(request):
+def result(request):
     objs = Document.objects.all()
-    return render(request, 'myhp/list.html', {
+    return render(request, 'myhp/result.html', {
         'objs': objs
     })
 
