@@ -27,7 +27,7 @@ def toppage(request):
         'headLine': headLine,
     })
 
-def index(request):
+def synthesis(request):
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
