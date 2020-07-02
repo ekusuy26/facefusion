@@ -340,13 +340,15 @@ h1,h2,h3,h4,h5,h6,p {
 }
 
 .chatMessageMain{
-  background-color: rgba(0, 255, 255, 0.2);
+  background-image: url("/static/images/top-image.jpg");
+  background-color:rgba(255,255,255,0.4);
+  background-blend-mode:lighten;
   height: 80%;
   overflow: scroll;
 }
 
 .chatMessageForm{
-  background-color: rgba(0, 255, 255, 0.3);
+  background-color: rgba(240, 240, 240, 0.3);
   height: 20%;
 }
 
