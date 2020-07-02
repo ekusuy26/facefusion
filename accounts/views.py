@@ -115,7 +115,10 @@ def likedPerson(request):
 
 # いいねされた相手
 def likedOpponent(request):
-    likes = Like.objects.filter(dog_id=request.user.dog.id)
+    all_likes = Like.objects.filter(dog_id=request.user.dog.id)
+    paginator = Paginator(all_likes, 5)
+    p = request.GET.get('p')
+    likes = paginator.get_page(p)
     headLine = 'あいてからのいいね！'
     return render(request, 'myhp/liked_opponent.html', {
         'likes': likes,
