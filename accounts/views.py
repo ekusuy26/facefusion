@@ -102,7 +102,10 @@ def like(request, pk):
 
 # いいねした相手
 def likedPerson(request):
-    likes = Like.objects.filter(user_id=request.user.id)
+    all_likes = Like.objects.filter(user_id=request.user.id)
+    paginator = Paginator(all_likes, 2)
+    p = request.GET.get('p')
+    likes = paginator.get_page(p)
     headLine = 'じぶんからのいいね！'
     return render(request, 'myhp/liked_person.html', {
         'likes': likes,

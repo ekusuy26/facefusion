@@ -16,7 +16,7 @@ def toppage(request):
     all_dogs = Dog.objects.order_by('-id')
     paginator = Paginator(all_dogs, 12) # 1ページに12件表示
     p = request.GET.get('p') # URLのパラメータから現在のページ番号を取得
-    dogs = paginator.get_page(p) # 指定のページのArticleを取得
+    dogs = paginator.get_page(p) # 指定のページのDogを取得
     objs = dogs[:5]
     dog = Dog.objects.filter(user_id=request.user.id)
     if dog.count() == 0:
