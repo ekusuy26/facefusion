@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
+from django.core.paginator import Paginator
 from .forms import DocumentForm
 from .models import Document
 from accounts.models import Dog
@@ -12,7 +13,10 @@ s3 = boto3.resource('s3')
 bucket = s3.Bucket('facefusion20200510')
 
 def toppage(request):
-    dogs = Dog.objects.order_by('-id')
+    all_dogs = Dog.objects.order_by('-id')
+    paginator = Paginator(all_dogs, 2) # 1ページに2件表示
+    p = request.GET.get('p') # URLのパラメータから現在のページ番号を取得
+    dogs = paginator.get_page(p) # 指定のページのArticleを取得
     objs = dogs[:5]
     dog = Dog.objects.filter(user_id=request.user.id)
     if dog.count() == 0:
