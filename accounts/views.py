@@ -3,6 +3,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView,CreateView,DeleteView, UpdateView
 from django.contrib.auth.forms import UserCreationForm
+from django.core.paginator import Paginator
 from django.urls import reverse_lazy, reverse
 from . import forms
 from .forms import DogForm
@@ -103,7 +104,7 @@ def like(request, pk):
 # いいねした相手
 def likedPerson(request):
     all_likes = Like.objects.filter(user_id=request.user.id)
-    paginator = Paginator(all_likes, 2)
+    paginator = Paginator(all_likes, 5)
     p = request.GET.get('p')
     likes = paginator.get_page(p)
     headLine = 'じぶんからのいいね！'

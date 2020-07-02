@@ -1,0 +1,14 @@
+<div class="pager">
+  <!-- 前のページへのリンク -->
+  {% if likes.has_previous %}
+  <a href="?p={{ likes.previous_page_number }}">前へ</a>
+  {% endif %}
+  <!-- 現在のページ番号と全体のページ数 -->
+  <span>
+    {{ likes.number }} / {{ likes.paginator.num_pages }}
+  </span>
+  <!-- 次のページへのリンク -->
+  {% if likes.has_next %}
+  <a href="?p={{ likes.next_page_number }}">次へ</a>
+  {% endif %}
+</div>
