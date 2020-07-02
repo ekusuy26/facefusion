@@ -44,18 +44,18 @@ def delete(request, pk):
     Chat.objects.filter(id=pk).delete()
     return redirect('/chat/' + str(crew_id))
 
-def new(request):
-    if request.method == 'GET':
-        form = CrewForm()
-    else:
-        form = CrewForm(request.POST)
-        if form.is_valid():
-            print('chat_regist is_valid')
-            form.save(request.POST)
-            new_crew = Crew.objects.latest('id')
-            new_crew.users.add(request.user)
-            return redirect('/chat')
-        else:
-            print('chat_regist false is_valid')
+# def new(request):
+#     if request.method == 'GET':
+#         form = CrewForm()
+#     else:
+#         form = CrewForm(request.POST)
+#         if form.is_valid():
+#             print('chat_regist is_valid')
+#             form.save(request.POST)
+#             new_crew = Crew.objects.latest('id')
+#             new_crew.users.add(request.user)
+#             return redirect('/chat')
+#         else:
+#             print('chat_regist false is_valid')
 
-    return render(request, 'chat/crew_new.html', {'form': form,})
+#     return render(request, 'chat/crew_new.html', {'form': form,})
