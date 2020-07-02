@@ -19,6 +19,23 @@
     </div>
   </a>
   {% endfor %}
+
+  <div class="pager">
+    <!-- 前のページへのリンク -->
+    {% if dogs.has_previous %}
+    <a href="?p={{ dogs.previous_page_number }}">前へ</a>
+    {% endif %}
+
+    <!-- 現在のページ番号と全体のページ数 -->
+    <span>
+      {{ dogs.number }} / {{ dogs.paginator.num_pages }}
+    </span>
+
+    <!-- 次のページへのリンク -->
+    {% if dogs.has_next %}
+    <a href="?p={{ dogs.next_page_number }}">次へ</a>
+    {% endif %}
+  </div>
 </div>
 
 {% endblock index %}
