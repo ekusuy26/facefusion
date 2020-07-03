@@ -5,15 +5,15 @@
   {{headLine}}
 </div>
 <div class="top-login-users">
-  {% for dog in dogs %}
-  <a href="{% url 'dogshow' pk=dog.id %}" class="toppage-user-link">
+  {% for obj in objs %}
+  <a href="{% url 'dogshow' pk=obj.id %}" class="toppage-user-link">
     <div class="top-login-user">
-      <img class="toppage-user-photo" src="{{ dog.image.url }}">
+      <img class="toppage-user-photo" src="{{ obj.image.url }}">
       <div class="toppage-user-explanation">
-        <div class="" style="text-align: center;">なまえ：{{ dog.dogname }}</div>
+        <div class="" style="text-align: center;">なまえ：{{ obj.dogname }}</div>
         <div class="" style="display: flex; justify-content: space-around;">
-          <div class="">{{ dog.sex }}</div>
-          <div class="">{{ dog.age }}さい</div>
+          <div class="">{{ obj.sex }}</div>
+          <div class="">{{ obj.age }}さい</div>
         </div>
       </div>
     </div>
