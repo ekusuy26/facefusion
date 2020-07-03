@@ -103,24 +103,24 @@ def like(request, pk):
 
 # いいねした相手
 def likedPerson(request):
-    all_likes = Like.objects.filter(user_id=request.user.id)
-    paginator = Paginator(all_likes, 5)
+    all_objs = Like.objects.filter(user_id=request.user.id)
+    paginator = Paginator(all_objs, 5)
     p = request.GET.get('p')
-    likes = paginator.get_page(p)
+    objs = paginator.get_page(p)
     headLine = 'じぶんからのいいね！'
     return render(request, 'myhp/liked_person.html', {
-        'likes': likes,
+        'objs': objs,
         'headLine': headLine,
     })
 
 # いいねされた相手
 def likedOpponent(request):
-    all_likes = Like.objects.filter(dog_id=request.user.dog.id)
-    paginator = Paginator(all_likes, 5)
+    all_objs = Like.objects.filter(dog_id=request.user.dog.id)
+    paginator = Paginator(all_objs, 5)
     p = request.GET.get('p')
-    likes = paginator.get_page(p)
+    objs = paginator.get_page(p)
     headLine = 'あいてからのいいね！'
     return render(request, 'myhp/liked_opponent.html', {
-        'likes': likes,
+        'objs': objs,
         'headLine': headLine,
     })
