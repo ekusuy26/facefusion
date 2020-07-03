@@ -25,7 +25,7 @@
     {% else %}
     <a href="{% url 'like' pk=dog.id %}" class="dog-show-link">いいねを外す</a>
     {% endif %}
-    <a href="{% url 'myhp:index' pk=dog.id %}" class="dog-show-link">合成ボタン</a>
+    <a href="{% url 'myhp:synthesis' %}" class="dog-show-link">合成ボタン</a>
   </div>
 </div>
 
