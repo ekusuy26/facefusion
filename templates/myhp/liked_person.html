@@ -1,15 +1,15 @@
 {% extends './like.html' %}
 {% block like %}
 
-<a href="{% url 'dogshow' pk=like.dog.id %}" class="toppage-user-link">
+<a href="{% url 'dogshow' pk=obj.dog.id %}" class="toppage-user-link">
   <div class="like-box-nav">
-    <img class="like-image" src="{{ like.dog.image.url }}">
+    <img class="like-image" src="{{ obj.dog.image.url }}">
     <div class="like-text">
-      {{like.dog.user.username}}さん<br>
-      なまえ：{{like.dog.dogname}}<br>
-      {{like.dog.age}}さい<br>
-      性別：{{like.dog.sex}}<br>
-      紹介文：{{like.dog.introduction}}<br>
+      {{obj.dog.user.username}}さん<br>
+      なまえ：{{obj.dog.dogname}}<br>
+      {{obj.dog.age}}さい<br>
+      性別：{{obj.dog.sex}}<br>
+      紹介文：{{obj.dog.introduction}}<br>
     </div>
   </div>
 </a>
