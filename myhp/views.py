@@ -57,7 +57,10 @@ def show(request):
     })
 
 def result(request):
-    objs = Document.objects.all()
+    all_objs = Document.objects.order_by('-id')
+    paginator = Paginator(all_objs, 10)
+    p = request.GET.get('p')
+    objs = paginator.get_page(p)
     return render(request, 'myhp/result.html', {
         'objs': objs
     })
